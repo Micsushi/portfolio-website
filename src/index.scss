@@ -15,7 +15,7 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #0d1116;
+  background-color: #1b2736;
 
 }
 
@@ -29,13 +29,13 @@ a:hover {
 }
 
 p, a, h1, h2, h3, h4, h5, label, button {
-  color: white;
+  color: #d0d0d2;
   font-family: "Lato", sans-serif;
 }
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #0d1116;
+  background-color: #13131b;
 
   button {
     font-size: 1.4rem;
@@ -92,19 +92,34 @@ p, a, h1, h2, h3, h4, h5, label, button {
   justify-content: center;
 }
 
+.MuiInputBase-input {
+  color: black !important; /* Change 'black' to the color you desire */
+  visibility: visible !important;
+  height: auto !important;
+}
+
 .light-mode {
-  background-color: #f8f9fa;
+  background-color: #858d95;
 
   .navigation-bar {
-    background-color: #f8f9fa;
+    background-color: #1b2736 ;
   }
 
-  p, a, h1, h2, h3, h4, h5, label, button {
-    color: #0d1116;
+  p, a, h1, h2, h3, h4, h5, label{
+    color: #1b2736  ;
+  }
+
+
+  button{
+    color: #d0d0d2 ;
+  }
+
+  .title{
+    color: #f2cc8f;
   }
 
   a:hover {
-    color: #5000ca;
+    color: #70519e;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
   }
 
@@ -144,6 +159,9 @@ p, a, h1, h2, h3, h4, h5, label, button {
   .flex-chips .chip-title {
     color: #0d1116;
   }
+  .vertical-timeline-element-date {
+    color: black !important;
+  }  
 }
 
 @media screen {
