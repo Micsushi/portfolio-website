@@ -16,50 +16,50 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - present"
+            date="May 2024 - present"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">Software Developer Intern @ AT&T/INVIDI</h3>
+            <h4 className="vertical-timeline-element-subtitle">Edmonton, AB</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
+              Devops Software Development. Backend Development for APIs, using Kotlin, AWS, Terraform, Docker
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2022"
+            date="Aug 2023 - May 2024"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Teaching Assistant @ University of Alberta</h3>
+            <h4 className="vertical-timeline-element-subtitle">Edmonton, AB</h4>
             <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
+              Lead TA for CMPUT 201 (Practical Programming Methodology): C, Bash, Data structures and Algorithms
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2021 - 2021"
+            date="May 2022 - Feb 2023"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Staff Engineer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Geek Squad Agent @ Bestbuy</h3>
+            <h4 className="vertical-timeline-element-subtitle">Edmonton, AB</h4>
             <p>
-              Full-stack Development, API Development, User Experience
+              Hardware repairs, Software repairs, Debugging and troubleshooting a variety of devices
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2020"
+            date="Mar 2021 - May 2022"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Data Analyst Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tokyo, Japan</h4>
+            <h3 className="vertical-timeline-element-title">Data Analyst Intern @ NEE YOU Trading</h3>
+            <h4 className="vertical-timeline-element-subtitle">Johannesburg, South Africa</h4>
             <p>
-              Automation, Data Governance, Statistical Analysis
+            Statistical Analysis, Automation, Data Governance, Data pipelines
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>

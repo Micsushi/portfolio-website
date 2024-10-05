@@ -15,8 +15,7 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #1b2736;
-
+  background-color: #171729;
 }
 
 a {
@@ -29,13 +28,13 @@ a:hover {
 }
 
 p, a, h1, h2, h3, h4, h5, label, button {
-  color: #d0d0d2;
+  color: #e6dfdf;
   font-family: "Lato", sans-serif;
 }
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #13131b;
+  background-color: #222063;
 
   button {
     font-size: 1.4rem;
@@ -99,23 +98,22 @@ p, a, h1, h2, h3, h4, h5, label, button {
 }
 
 .light-mode {
-  background-color: #858d95;
-
-  .navigation-bar {
-    background-color: #1b2736 ;
-  }
+  background-color: #c4c4df;
 
   p, a, h1, h2, h3, h4, h5, label{
-    color: #1b2736  ;
+    color: #000000 ;
   }
 
+  .navigation-bar {
+    background-color: #524ea0;
+  }
 
   button{
-    color: #d0d0d2 ;
+    color: #000000 ;
   }
 
   .title{
-    color: #f2cc8f;
+    color: #a96a03;
   }
 
   a:hover {
