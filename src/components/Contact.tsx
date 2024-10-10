@@ -1,114 +1,111 @@
-import React, { useRef, useState } from 'react';
-import '../assets/styles/Contact.scss';
-import emailjs from '@emailjs/browser';
-import Box from '@mui/material/Box';
+import React, { useState } from 'react';
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+import SendIcon from '@mui/icons-material/Send';
+import emailjs from 'emailjs-com';
+import '../assets/styles/Contact.scss';
+
+interface IFormInputs {
+  name: string;
+  email: string;
+  message: string;
+}
 
 function Contact() {
+  const { control, handleSubmit, reset } = useForm<IFormInputs>();
+  const [notification, setNotification] = useState<string | null>(null);
 
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
-
-  const [nameError, setNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [messageError, setMessageError] = useState<boolean>(false);
-
-  const form = useRef();
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
-
-    if (name !== '' && email !== '' && message !== '') {
-      var templateParams = {
-        name: name,
-        email: email,
-        message: message
-      };
-
-      console.log(templateParams);
-      emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-        },
-        (error) => {
-          console.log('FAILED...', error);
-        },
-      );
-      setName('');
-      setEmail('');
-      setMessage('');
-    }
+  const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+    const emailData: Record<string, unknown> = { ...data };
+    emailjs.send(
+      'service_i4f0bbl', 
+      'template_hkc0naq', 
+      emailData,
+      'W2wOTit0q-Cka9FVm'
+    )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setNotification('Your message has been sent successfully!');
+      reset(); 
+    })
+    .catch((err) => {
+      console.error('FAILED...', err);
+      setNotification('Failed to send your message. Please try again.');
+    });
   };
 
   return (
-    <div id="contact">
-      <div className="items-container">
-        <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-          <Box
-            ref={form}
-            component="form"
-            noValidate
-            autoComplete="off"
-            className='contact-form'
-          >
-            <div className='form-flex'>
+    <div className="contact-container" id="contact">
+      <h1 className="contact-title">Contact Me</h1>
+      <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+        <p className="contact-description">
+          Got a project waiting to be realized? Let's collaborate and make it happen!
+        </p>
+        <div className="form-flex">
+          <Controller
+            name="name"
+            control={control}
+            defaultValue=""
+            rules={{ required: 'Name is required' }}
+            render={({ field, fieldState: { error } }) => (
               <TextField
-                required
-                id="outlined-required"
+                {...field}
                 label="Your Name"
                 placeholder="What's your name?"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
+                fullWidth
+                error={!!error}
+                helperText={error?.message}
                 className="custom-textfield"
               />
+            )}
+          />
+          <Controller
+            name="email"
+            control={control}
+            defaultValue=""
+            rules={{ 
+              required: 'Email is required',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Invalid email address'
+              }
+            }}
+            render={({ field, fieldState: { error } }) => (
               <TextField
-                required
-                id="outlined-required"
+                {...field}
                 label="Email / Phone"
                 placeholder="How can I reach you?"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
+                fullWidth
+                error={!!error}
+                helperText={error?.message}
                 className="custom-textfield"
               />
-            </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-            />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
-            </Button>
-          </Box>
+            )}
+          />
         </div>
-      </div>
+        <Controller
+            name="message"
+            control={control}
+            defaultValue=""
+            rules={{ required: 'A message is required' }}
+            render={({ field, fieldState: { error } }) => (
+              <TextField
+                {...field}
+                label="Your Message"
+                placeholder="What's your message to me?"
+                fullWidth
+                error={!!error}
+                helperText={error?.message}
+                className="custom-textfield"
+              />
+            )}
+          />
+        <Button type="submit" variant="contained" endIcon={<SendIcon />} className="submit-button">
+          SEND
+        </Button>
+      </form>
+      {notification && <p className="notification">{notification}</p>}
     </div>
   );
 }
