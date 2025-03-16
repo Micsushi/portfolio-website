@@ -9,26 +9,32 @@ const labelsFirst = [
     "Rust", 
     "TypeScript", 
     "Python", 
-    "C++", 
+    "C", 
     "React", 
     "Next.js", 
     "Node.js", 
     "Java", 
-    "Kotlin"
+    "Kotlin",
+    "Express.js",
+    "FastAPI"
 ];
 
 const labelsSecond = [
-     "AWS", 
-     "Google Cloud Platform", 
-     "Docker", 
-     "Terraform", 
-     "Kubernetes", 
-     "Coolify", 
-     "Portainer", 
+    "AWS", 
+    "Google Cloud Platform", 
+    "Docker", 
+    "Terraform", 
+    "Kubernetes",
+    "CI/CD pipelines",
+    "Vercel",
+    "Coolify", 
+    "Portainer", 
+    "Github action",
+    "Bitbucket"
 ];
 
 const labelsThird = [
-    "SQL", "NoSQL", "Firebase", "MongoDB", "Postgres", "Ignite","Supabase", "RESTful API"
+    "SQL", "NoSQL", "Firebase", "MongoDB", "Postgres", "Ignite","Supabase", "RESTful API", "Auth", "Snyk", "Datadog"
 ];
 
 function Expertise() {
@@ -39,9 +45,21 @@ function Expertise() {
             <div className="skills-grid">
                 <div className="skill">
                     <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Programming Languages & Frameworks</h3>
-                    <p>I have a strong foundation in multiple programming languages including Rust, TypeScript and Python. I am proficient in building web applications
-                         using frameworks like React and Next.js and I have extensive experience in creating mobile apps in languages like Java and Kotlin</p>
+                    <h3>Languages & Frameworks</h3>
+                        <p>
+                            I am able to deliver end-to-end solutions!
+                        </p>
+                        <p>
+                            I possess a strong foundation in multiple programming languages,
+                            including <b>TypeScript, Rust, C,</b> and <b>Python</b>.
+                        </p>
+                        <p>
+                            I am highly proficient
+                            in building modern, scalable web applications using frameworks
+                            like <b>Vue, React and Next.js</b>, and I have extensive experience
+                            developing mobile applications and backend code with <b>Java</b> and <b>Kotlin</b>.
+                            
+                        </p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (
@@ -53,8 +71,16 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faDocker} size="3x"/>
                     <h3>Cloud & DevOps</h3>
-                    <p>I have hands-on experience with cloud computing platforms such as AWS and Google Cloud Platform, where I’ve managed and optimized infrastructure. 
-                        My DevOps expertise includes but is not limited to: Docker, Kubernetes,  Terraform, CI/CD pipelines, Github Action, Coolify and Portainer.</p>
+                        <p>
+                            I have hands-on experience with leading cloud computing platforms,
+                            including <b>AWS</b> and <b>GCP</b>
+                        </p>
+                        <p>
+                            My DevOps expertise spans a wide range of tools and practices,
+                            such as <b>Docker, Kubernetes, Terraform,</b> and CI/CD pipelines using <b>GitHub Actions</b> and <b>Bitbucket pipelines</b>.
+                            Additionally, I’ve worked with <b>Vercel, Coolify</b> and <b>Portainer</b> to streamline deployment
+                            and container management processes.
+                        </p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
@@ -65,9 +91,16 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faMdb} size="3x"/>
-                    <h3>Databases & APIs</h3>
-                    <p>I am skilled in working with both SQL and NoSQL databases, optimizing queries and managing schema designs to ensure efficient data storage and retrieval. 
-                        I have also implemented and integrated RESTful APIs, enabling seamless communication between different components of an application.</p>
+                    <h3>Databases & Tools</h3>
+                        <p>
+                            I am skilled in <b>SQL</b> and <b>NoSQL</b> databases, optimizing schemas for efficient data storage.
+                        </p>
+                        <p>
+                            I’ve implemented <b>RESTful APIs</b> with <b>auth0</b> and <b>keycloak</b> for secure communication.
+                        </p>
+                        <p>
+                            Additionally, I’ve worked with <b>Snyk</b> for vulnerability management and <b>Datadog</b> for monitoring and performance optimization.
+                        </p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (

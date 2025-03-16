@@ -27,8 +27,13 @@ a:hover {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
-p, a, h1, h2, h3, h4, h5, label, button {
+p, h1, h2, h3, h4,label, button {
   color: #e6dfdf;
+ font-family: "Lato", sans-serif;
+}
+
+a {
+  color: #3970d6;
   font-family: "Lato", sans-serif;
 }
 
