@@ -4,12 +4,18 @@ footer {
     padding-bottom: 50px;
 
     svg {
-        width: 1.1em !important;
-        height: 1.1em !important;
-        margin-right: 10px;
-    }
-
-    p {
-        font-size: 0.8em;
+        font-size: 3em!important;
+        margin: 0 10px;
     }
 } 
+
+@media (max-width: 768px) {
+    footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        svg{
+            font-size: 2em!important;
+            margin: 0 5px;
+        }
+    }
+}

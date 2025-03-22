@@ -3,13 +3,13 @@
 }
 
 .about-section {
+    min-height: 100vh;
     display: flex;
-    gap: 30px;
+    gap: 60px;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
     padding: 0px 15%;
-    min-height: 700px;
     background-image: url("../images/bg-dark.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,42 +17,39 @@
     background-position: center;
 }
 
-.title{
-    font-size: 100 px;
+.title {
+    font-size: 100px;
     color: #f2cc8f;
     font-weight: bold;
     padding: 0 0 0 10px;
 }
 
-
-
 .about-section .content {
+    margin-top: -30px;
     text-align: left;
     z-index: 2;
 
     .social_icons {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 20px;
         color: white;
+        padding-left: 5px;
 
         svg {
-            font-size: 1.8em;
+            font-size: 4.5em;
         }
     }
 
-    .mobile_social_icons {
-        display: none;
-    }
-
     p {
-        font-size: 1.5em;
+        font-size: 2.5em;
         margin-block-start: 0px;
         margin-block-end: 0px;
+        margin-bottom: 20px;
     }
 
     h1 {
-        font-size: 5em;
+        font-size: 6em;
         margin-block-start: 0px;
         margin-block-end: 0px;
     }
@@ -61,56 +58,46 @@
 .about-section .image-wrapper {
     z-index: 2;
     img {
-        width: 250px;
-        border-radius: 50%;
+        width: 325px;
+        border-radius: 30%;
     }
 }
 
-.about p {
-    text-align: center;
-    padding-top: 30%;
-    padding-bottom: 30%;
-}
+@media (max-width: 768px) {
+    .about-section {
+        gap: 90px;
+        flex-direction: column;
+        padding: 0px 5%;
+        text-align: center;
+        justify-content: center;
+        margin-top: -10px;
+    }
 
-@media screen {
-    @media (max-width: 567px) {
-        .nav-left{
-            padding-top: 20px;
-            float:left;
+    .title {
+        font-size: 50px;
+    }
+
+    .about-section .content {
+        text-align: center;
+
+        .social_icons {
+            justify-content: center;
+            svg {
+                font-size: 2em;
+            }
         }
 
-        .nav-left img {
-            height: 35px
+        p {
+            font-size: 1.4em;
+            margin-bottom: 120px;
         }
 
-        .nav-right {
-            float:right;
-        }
-
-        .nav-right li {
-            padding: 10px 15px;
-            list-style:none;
-            font-size:13px;
-            font-style: bold;
-            color:white;
-            width: 10%;
-        }
-
-        .nav-right ul {
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        body {
-            width: 100%;
-        }
-
-        .about {
-            padding-left: 5%;
-            padding-right: 5%;
-            font-size: 12px;
+        h1 {
+            font-size: 3.2em;
         }
     }
 
+    .about-section .image-wrapper img {
+        width: 200px;
+    }
 }

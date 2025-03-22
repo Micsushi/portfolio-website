@@ -1,4 +1,3 @@
-import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faDocker, faMdb } from '@fortawesome/free-brands-svg-icons';
@@ -6,35 +5,30 @@ import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-    "Rust", 
+    "Kotlin",
+    "Java",
     "TypeScript", 
     "Python", 
-    "C", 
+    "C",
+    "R",
     "React", 
     "Next.js", 
-    "Node.js", 
-    "Java", 
-    "Kotlin",
-    "Express.js",
-    "FastAPI"
+    "Vue.js",
 ];
 
 const labelsSecond = [
     "AWS", 
-    "Google Cloud Platform", 
+    "GCP",
     "Docker", 
     "Terraform", 
     "Kubernetes",
-    "CI/CD pipelines",
+    "CI/CD",
     "Vercel",
-    "Coolify", 
-    "Portainer", 
     "Github action",
-    "Bitbucket"
 ];
 
 const labelsThird = [
-    "SQL", "NoSQL", "Firebase", "MongoDB", "Postgres", "Ignite","Supabase", "RESTful API", "Auth", "Snyk", "Datadog"
+    "Firebase", "MongoDB", "PostgresSQL", "Supabase", "RESTful API", "Auth", "Snyk", "Datadog"
 ];
 
 function Expertise() {
@@ -47,21 +41,11 @@ function Expertise() {
                     <FontAwesomeIcon icon={faReact} size="3x"/>
                     <h3>Languages & Frameworks</h3>
                         <p>
-                            I am able to deliver end-to-end solutions!
-                        </p>
-                        <p>
-                            I possess a strong foundation in multiple programming languages,
-                            including <b>TypeScript, Rust, C,</b> and <b>Python</b>.
-                        </p>
-                        <p>
-                            I am highly proficient
-                            in building modern, scalable web applications using frameworks
-                            like <b>Vue, React and Next.js</b>, and I have extensive experience
-                            developing mobile applications and backend code with <b>Java</b> and <b>Kotlin</b>.
-                            
+                            I am experienced in both frontend and backend development, with proficiency
+                            in a variety of programming languages and frameworks, enabling me to build
+                            modern, scalable, and high-performance applications across diverse platforms.
                         </p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
@@ -72,17 +56,11 @@ function Expertise() {
                     <FontAwesomeIcon icon={faDocker} size="3x"/>
                     <h3>Cloud & DevOps</h3>
                         <p>
-                            I have hands-on experience with leading cloud computing platforms,
-                            including <b>AWS</b> and <b>GCP</b>
-                        </p>
-                        <p>
-                            My DevOps expertise spans a wide range of tools and practices,
-                            such as <b>Docker, Kubernetes, Terraform,</b> and CI/CD pipelines using <b>GitHub Actions</b> and <b>Bitbucket pipelines</b>.
-                            Additionally, I’ve worked with <b>Vercel, Coolify</b> and <b>Portainer</b> to streamline deployment
-                            and container management processes.
+                            I have hands-on experience with maintaining infrastructure for large-scale cloud systems.
+                            My DevOps expertise includes containerization, orchestration, infrastructure-as-code,
+                            CI/CD pipelines, and deployment automation.
                         </p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
@@ -93,16 +71,10 @@ function Expertise() {
                     <FontAwesomeIcon icon={faMdb} size="3x"/>
                     <h3>Databases & Tools</h3>
                         <p>
-                            I am skilled in <b>SQL</b> and <b>NoSQL</b> databases, optimizing schemas for efficient data storage.
-                        </p>
-                        <p>
-                            I’ve implemented <b>RESTful APIs</b> with <b>auth0</b> and <b>keycloak</b> for secure communication.
-                        </p>
-                        <p>
-                            Additionally, I’ve worked with <b>Snyk</b> for vulnerability management and <b>Datadog</b> for monitoring and performance optimization.
+                            I am skilled in working with both SQL and NoSQL databases, optimizing schemas for efficient data storage.
+                            I have implemented secure RESTful APIs with auth and have experience in vulnerability management and data monitoring.
                         </p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}

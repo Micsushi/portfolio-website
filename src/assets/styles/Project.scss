@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 5% 10%;
     text-align: left;
+    margin-top: -50px;
 }
   
 .projects-container .projects-grid {
@@ -12,6 +13,7 @@
 }
   
 .projects-container .projects-grid .project {
+    margin-top: 60px;
     text-align: left;
 }
   
@@ -43,6 +45,7 @@
             display: block;
             padding-left: 5%;
             padding-right: 5%;
+            margin-top: 0;
         }
   
         .projects-container .projects-grid {

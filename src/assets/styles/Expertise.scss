@@ -1,4 +1,5 @@
 .skills-container {
+    margin-top: -50px;
     padding: 5% 10%;
     display: flex;
     flex-direction: column;
@@ -16,6 +17,7 @@
 }
   
 .skills-container .skills-grid .skill {
+    margin-top: 50px;
     align-items: center;
     text-align: left;
 }
@@ -25,6 +27,7 @@
     background-color: white !important;
     font-size: 0.8rem !important;
     height: 25px !important;
+    font-weight: bold;
   
     span {
         font-family: 'Courier Prime', monospace;
