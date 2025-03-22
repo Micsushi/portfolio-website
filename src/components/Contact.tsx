@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import emailjs from 'emailjs-com';
 import '../assets/styles/Contact.scss';
+import useAnimation from './useAnimation'; 
 
 interface IFormInputs {
   name: string;
@@ -35,9 +36,11 @@ function Contact() {
     });
   };
 
+  const h1Ref = useAnimation<HTMLHeadingElement>();
+
   return (
     <div className="contact-container" id="contact">
-      <h1 className="contact-title">Contact Me</h1>
+      <h1 ref={h1Ref} className="contact-title">Contact Me</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
         <p className="contact-description">
           Got a project waiting to be realized? Let's collaborate and make it happen!

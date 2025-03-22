@@ -1,0 +1,36 @@
+/* Navigation items */
+.nav-list-item, .MuiButton-root {
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+  color: inherit;
+}
+
+/* Underline bar */
+.nav-list-item::after, .MuiButton-root::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #8158f0;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+/* Active state */
+.nav-list-item.active, .MuiButton-root.active {
+  color: #8158f0;
+}
+
+.nav-list-item.active::after, .MuiButton-root.active::after {
+  width: 80%;
+  transition: width 0s; 
+}
+
+/* Hover state */
+.nav-list-item:hover::after, .MuiButton-root:hover::after {
+  width: 80%;
+  transition: width 0.5s ease;
+}
