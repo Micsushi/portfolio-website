@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -16,6 +16,9 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import '../assets/styles/Navigation.scss';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+import Toast from './Toast';
 
 const drawerWidth = 240;
 const navItems = [['Home', 'home'], ['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
@@ -26,10 +29,54 @@ function Navigation({ parentToChild, modeChange }: any) {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('home');
+  const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const themeSoundRef = useRef<HTMLAudioElement | null>(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  // Function to play sound
+  const playSound = () => {
+    if (soundEnabled) {
+      const clickSound = new Audio(process.env.PUBLIC_URL + '/woosh.wav');
+      clickSound.volume = 0.4;
+      clickSound.play().catch((error) => {
+        console.error('Failed to play sound:', error);
+      });
+    }
+  };
+
+  // Toggle sound on/off
+  const toggleSound = () => {
+    if (!soundEnabled) {
+      themeSoundRef.current = new Audio(process.env.PUBLIC_URL + '/theme.mp3');
+      themeSoundRef.current.volume = 0.4;
+      themeSoundRef.current.loop = true;
+      themeSoundRef.current.play().catch((error) => {
+        console.error('Failed to play theme music:', error);
+      });
+      setToastMessage("Sound is ON, enjoy one of my favourite songs :D");
+    } else {
+      if (themeSoundRef.current) {
+        themeSoundRef.current.pause();
+        themeSoundRef.current.currentTime = 0;
+      }
+      setToastMessage("Sound is OFF");
+    }
+    setSoundEnabled((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (toastMessage) {
+      const timer = setTimeout(() => {
+        setToastMessage(null);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [toastMessage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,6 +109,7 @@ function Navigation({ parentToChild, modeChange }: any) {
   const scrollToSection = (section: string) => {
     const element = document.getElementById(section);
     if (element) {
+      playSound();
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
@@ -117,6 +165,15 @@ function Navigation({ parentToChild, modeChange }: any) {
               </Button>
             ))}
           </Box>
+          <IconButton
+            color="inherit"
+            aria-label="toggle sound"
+            edge="end"
+            onClick={toggleSound}
+            sx={{ ml: 2 }}
+          >
+            {soundEnabled ? <VolumeUpIcon /> : <VolumeOffIcon />}
+          </IconButton>
         </Toolbar>
       </AppBar>
       <nav>
@@ -135,6 +192,7 @@ function Navigation({ parentToChild, modeChange }: any) {
           {drawer}
         </Drawer>
       </nav>
+      {toastMessage && <Toast message={toastMessage} />}
     </Box>
   );
 }

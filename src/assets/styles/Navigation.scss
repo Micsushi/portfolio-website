@@ -1,9 +1,13 @@
 /* Navigation items */
-.nav-list-item, .MuiButton-root {
+.navigation-bar .nav-list-item, 
+.navigation-bar .MuiButton-root {
   position: relative;
-  transition: color 0.3s ease;
-  padding-bottom: 4px;
+  transition: color 0.3s ease, margin 0.3s ease, font-size 0.3s ease; /* Added font-size transition */
+  padding-bottom: 15px;
   color: inherit;
+  font-size: 1.5rem; /* Default font size */
+  font-weight: 700;
+  margin: 0 10px; /* Default margin */
 }
 
 /* Underline bar */
@@ -33,4 +37,30 @@
 .nav-list-item:hover::after, .MuiButton-root:hover::after {
   width: 80%;
   transition: width 0.5s ease;
+}
+
+@media (max-width: 1100px) {
+  .navigation-bar .nav-list-item, 
+  .navigation-bar .MuiButton-root {
+    font-size: 1.1rem; 
+    margin: 0 6px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navigation-bar .nav-list-item, 
+  .navigation-bar .MuiButton-root {
+    font-weight: 900;
+    font-size: 0.7rem; 
+    margin: 0px; 
+  }
+}
+
+@media (max-width: 730px) {
+  .navigation-bar .nav-list-item, 
+  .navigation-bar .MuiButton-root {
+    font-weight: 900;
+    font-size: 0.7rem; 
+    margin: -15px; 
+  }
 }

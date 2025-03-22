@@ -1,20 +1,13 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import 'animate.css';
+import selfie from "../assets/images/selfie.jpg";
 import '../assets/styles/Main.scss';
 
 function Main() {
-  const image = process.env.PUBLIC_URL + '/selfie.jpg';
-
   // Add animation classes after a delay
   useEffect(() => {
-    const titleElement = document.querySelector('.title');
-    setTimeout(() => {
-      if (titleElement) {
-        titleElement.classList.add('animate__animated', 'animate__flash');
-      }
-    }, 1000);
     const gitElement = document.querySelector('.git-icon');
     setTimeout(() => {
       if (gitElement) {
@@ -33,11 +26,11 @@ function Main() {
     <div className="container" id="home">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src={image} alt="Avatar" />
+          <img className="animate__animated animate__lightSpeedInLeft" src={selfie} alt="Avatar" />
         </div>
         <div className="content">
           <h1 className="name animate__animated animate__lightSpeedInRight">Michael Shi</h1>
-            <p className="title">Full Stack Developer</p>
+            <p className="title animate__animated animate__lightSpeedInRight">Full Stack Developer</p>
           <div className="title-container">
             <div className="social_icons">
               <a className="git-icon" href="https://github.com/micsushi" target="_blank" rel="noreferrer"><GitHubIcon/></a>
