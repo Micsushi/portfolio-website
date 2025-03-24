@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, memo } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -30,7 +30,8 @@ function Navigation({ parentToChild, modeChange }: any) {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('home');
   const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toastVisible, setToastVisible] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>(""); 
   const themeSoundRef = useRef<HTMLAudioElement | null>(null);
 
   const handleDrawerToggle = () => {
@@ -66,17 +67,19 @@ function Navigation({ parentToChild, modeChange }: any) {
       setToastMessage("Sound is OFF");
     }
     setSoundEnabled((prev) => !prev);
+    setToastVisible(true); 
   };
 
+  // Hide the Toast after 2 seconds
   useEffect(() => {
-    if (toastMessage) {
+    if (toastVisible) {
       const timer = setTimeout(() => {
-        setToastMessage(null);
+        setToastVisible(false); 
       }, 2000);
 
       return () => clearTimeout(timer);
     }
-  }, [toastMessage]);
+  }, [toastVisible]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -192,7 +195,7 @@ function Navigation({ parentToChild, modeChange }: any) {
           {drawer}
         </Drawer>
       </nav>
-      {toastMessage && <Toast message={toastMessage} />}
+      <Toast visible={toastVisible} message={toastMessage} />
     </Box>
   );
 }

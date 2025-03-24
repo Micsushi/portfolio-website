@@ -2,26 +2,18 @@
   position: fixed;
   top: 150px;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
+  z-index: 1000;
+  background-color: rgba(62, 61, 61, 0.8);
   color: #fff;
   padding: 30px 60px;
   border-radius: 5px;
-  animation: fadeInOut 1s ease-in-out;
-  size: 5em;
-}
+  font-size: 1.5em;
+  opacity: 0;
+  transform: translate(-50%, -20px); /* Initial position */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-  10% {
+  &.visible {
     opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+    transform: translate(-50%, 0); /* Final position */
   }
 }
