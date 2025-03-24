@@ -19,8 +19,13 @@
 .projects-container .projects-grid .project {
     text-align: left;
 }
+
+.project h2 {
+    color: #f2cc8f;
+}
   
 .project h2:hover {
+    color: #8158f0;
     text-decoration: underline;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }

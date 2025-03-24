@@ -18,6 +18,7 @@ body {
 }
 
 h1{
+  color: #544eef;
   font-size: 2.5em;
 }
 
@@ -40,7 +41,7 @@ a:hover {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
-p, h1, h2, h3, h4,label, button {
+p, h2, h3, h4,label, button {
   color: #e6dfdf;
  font-family: "Lato", sans-serif;
 }

@@ -36,6 +36,10 @@
   --animate-duration: 0.5s;
 }
 
+.name{
+    color: #e6dfdf
+}
+
 .title {
     font-size: 100px;
     color: #f2cc8f;
@@ -53,7 +57,7 @@
         transition: color 0.3s ease-in-out;
 
         &:hover {
-            color: #239ee0; // Change to hover color
+            color: #8158f0;
         }
     }
 
