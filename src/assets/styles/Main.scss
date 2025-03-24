@@ -3,17 +3,25 @@
 }
 
 .about-section {
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     gap: 60px;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
     padding: 0px 15%;
-    background-image: url("../images/bg-dark.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
 
 .animate__animated.animate__zoomInRight {
@@ -25,7 +33,7 @@
 }
 
 .animate__animated.animate__flash {
-  --animate-duration: 1s;
+  --animate-duration: 0.5s;
 }
 
 .title {
@@ -40,6 +48,16 @@
     text-align: left;
     z-index: 2;
 
+    .social_icons a {
+        color: #f2cc8f; // Change to your desired color
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: #239ee0; // Change to hover color
+        }
+    }
+
+
     .social_icons {
         display: flex;
         flex-direction: row;
@@ -48,7 +66,7 @@
         padding-left: 5px;
 
         svg {
-            font-size: 4.5em;
+            font-size: 5em;
         }
     }
 
@@ -81,7 +99,7 @@
         padding: 0px 5%;
         text-align: center;
         justify-content: center;
-        margin-top: -10px;
+        margin-top: -120px;
     }
 
     .title {
@@ -94,7 +112,7 @@
         .social_icons {
             justify-content: center;
             svg {
-                font-size: 2em;
+                font-size: 3em;
             }
         }
 
