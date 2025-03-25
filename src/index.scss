@@ -1,3 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+// * {
+//   outline: 1px solid red !important;
+// }
+
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+:root {
+  --primary-border: 3px solid #544eef;
+  --primary-glow: 
+    0 0 15px #544eef,
+    0 0 30px #521fdc,
+    inset 0 0 20px #544eef;
+  --hover-glow: 
+    0 0 15px #fff,
+    0 0 30px #544eef,
+    inset 0 0 20px #544eef;
+}
+
+@mixin glowing-border-effect(
+  $transition-speed: 0.3s,
+  $hover-scale: 1.1
+) {
+  border: var(--primary-border);
+  box-shadow: var(--primary-glow);
+  transition: all $transition-speed ease;
+
+  &:hover {
+    box-shadow: var(--hover-glow);
+    transform: scale($hover-scale);
+  }
+}
+
+@mixin float(
+  $animation-duration: 4s
+){
+  animation: float $animation-duration ease-in-out infinite;
+}
+
+
+.header {
+  position: relative;
+  color: #ffffffac;
+  background-color: transparent;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 30px;
+  width: fit-content;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 80px;
+  
+  color: #fff;
+  text-shadow: 
+    0 0 2px #fff,
+    0 0 5px #544eef,
+    0 0 10px #521fdc;
+  
+  // Container glow
+  box-shadow: 
+    0 0 1px #fff,
+    inset 0 0 3px #fff,
+    0 0 10px #544eef,
+    inset 0 0 10px #544eef,
+    0 0 20px #521fdc,
+    inset 0 0 20px #521fdc;
+  
+  border: 5px solid #fff;
+  border-radius: 15px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #544eef;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.7;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    box-shadow: inset 0 0 20px #ffffffac;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    animation: glitch-box 1s linear infinite;
+    
+    &::before {
+      animation: glitch-glow 1s linear infinite;
+    }
+  }
+}
+
+  .social_icons a {
+    color: #f2cc8f;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #8158f0;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: #8158f0;
+    }
+  }
+
+@keyframes glitch-box {
+  0% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    box-shadow: 
+      0 0 1px #ffffffac,
+      inset 0 0 3px #ffffffac,
+      0 0 10px #544eef,
+      inset 0 0 10px #544eef,
+      0 0 40px #521fdc,
+      inset 0 0 40px #521fdc;
+    transform: translate(0);
+  }
+  33% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #0000ff,
+      0 0 20px #ff00ff;
+    box-shadow: 
+      0 0 1px #0000ff,
+      inset 0 0 3px #ff00ff,
+      0 0 20px #00ffff,
+      inset 0 0 20px #ff0000,
+      0 0 40px #ffff00,
+      inset 0 0 40px #521fdc;
+    transform: translate(3px, 3px);
+  }
+  67% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #ff00ff,
+      0 0 20px #ffff00;
+    box-shadow: 
+      0 0 1px #ff00ff,
+      inset 0 0 3px #ffff00,
+      0 0 20px #ff0000,
+      inset 0 0 20px #00ffff,
+      0 0 40px #544eef,
+      inset 0 0 40px #0000ff;
+    transform: translate(-3px, -3px);
+  }
+  100% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    box-shadow: 
+      0 0 1px #ffffffac,
+      inset 0 0 3px #ffffffac,
+      0 0 20px #544eef,
+      inset 0 0 20px #544eef,
+      0 0 40px #521fdc,
+      inset 0 0 40px #521fdc;
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-glow {
+  0%, 100% {
+    background: #544eef;
+    filter: blur(1.5em) hue-rotate(0deg);
+  }
+  33% {
+    background: #0000ff;
+    filter: blur(1.5em) hue-rotate(90deg);
+  }
+  67% {
+    background: #ff00ff;
+    filter: blur(1.5em) hue-rotate(-90deg);
+  }
+}
+
 body {
   overscroll-behavior: none; 
   height: 100%;
@@ -14,12 +224,62 @@ body {
 }
 
 .animate__animated.animate__flash{
-  --animate-duration: 0.5s;
+  --animate-duration: 0.7s;
 }
 
 h1{
   color: #544eef;
   font-size: 2.5em;
+  font-family: 'Orbitron', sans-serif;
+}
+
+h1:hover {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    transform: translate(0);
+  }
+  20% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    transform: translate(2px, -2px);
+  }
+  60% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    transform: translate(2px, 2px);
+  }
+  80% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    text-shadow: 
+      0 0 8px #fff,
+      0 0 15px #544eef,
+      0 0 20px #521fdc;
+    transform: translate(0);
+  }
 }
 
 code {

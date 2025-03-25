@@ -9,7 +9,7 @@ function Project() {
   const h1Ref = useAnimation<HTMLHeadingElement>();
   return(
     <div className="projects-container" id="projects">
-      <h1 ref={h1Ref}>Projects</h1>
+      <h1 className="header" ref={h1Ref}>Projects</h1>
       <div className="projects-grid">
         <div className="project">
           <a href="https://github.com/NatRunners/StudyAmp" target="_blank" rel="noreferrer">

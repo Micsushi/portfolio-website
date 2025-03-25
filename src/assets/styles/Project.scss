@@ -1,3 +1,5 @@
+@import '../../index'; 
+
 .projects-container {
     display: flex;
     flex-direction: column;
@@ -21,13 +23,20 @@
 }
 
 .project h2 {
+    font-family: 'Orbitron', sans-serif;
     color: #f2cc8f;
+    text-shadow: 
+        0 0 1px #fff,
+        0 0 5px #f2cc8f;
 }
   
 .project h2:hover {
     color: #8158f0;
     text-decoration: underline;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    text-shadow: 
+        0 0 1px #fff,
+        0 0 5px #8158f0;
 }
   
 .zoom {
@@ -45,6 +54,8 @@
     height: 325px;
     object-fit: cover;
     border-radius: 5px;
+    @include glowing-border-effect();
+    @include float();
 }
 
 @media screen {

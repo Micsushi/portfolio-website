@@ -9,27 +9,49 @@ function Main() {
   const firstVideoRef = useRef<HTMLVideoElement>(null); 
   const secondVideoRef = useRef<HTMLVideoElement>(null); 
   const [showSecondVideo, setShowSecondVideo] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
+    // Detect iOS
+    setIsIOS(/iPad|iPhone|iPod/.test(navigator.userAgent) || 
+             (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+
     const gitElement = document.querySelector('.git-icon');
-    setTimeout(() => {
-      if (gitElement) {
-        gitElement.classList.add('animate__animated', 'animate__flash');
-      }
-    }, 2000);
     const linkElement = document.querySelector('.linkedin-icon');
+    
     setTimeout(() => {
-      if (linkElement) {
-        linkElement.classList.add('animate__animated', 'animate__flash');
-      }
+      gitElement?.classList.add('animate__animated', 'animate__flash');
+      linkElement?.classList.add('animate__animated', 'animate__flash');
     }, 2000);
-  }, []);
+
+    const handleFirstVideoPlay = () => {
+      if (firstVideoRef.current) {
+        firstVideoRef.current.play().catch(error => {
+          console.log('Autoplay prevented:', error);
+          document.body.addEventListener('click', playVideosOnInteraction, { once: true });
+        });
+      }
+    };
+
+    const playVideosOnInteraction = () => {
+      firstVideoRef.current?.play();
+      if (showSecondVideo) {
+        secondVideoRef.current?.play();
+      }
+    };
+
+    handleFirstVideoPlay();
+
+    return () => {
+      document.body.removeEventListener('click', playVideosOnInteraction);
+    };
+  }, [showSecondVideo]);
 
   const handleFirstVideoEnd = () => {
     setShowSecondVideo(true);
-    if (secondVideoRef.current) { 
-      secondVideoRef.current.play(); 
-    }
+    secondVideoRef.current?.play()?.catch(error => {
+      console.log('Second video play failed:', error);
+    });
   };
 
   return (
@@ -38,10 +60,14 @@ function Main() {
         <video
           ref={firstVideoRef}
           className="video-background"
-          autoPlay
+          autoPlay={!isIOS}
           muted
+          playsInline
           onEnded={handleFirstVideoEnd}
-          style={{ display: showSecondVideo ? 'none' : 'block' }} 
+          style={{ display: showSecondVideo ? 'none' : 'block' }}
+          preload="auto"
+          webkit-playsinline="true"
+          x-webkit-airplay="allow" 
         >
           <source src="/videos/intro.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -50,13 +76,47 @@ function Main() {
         <video
           ref={secondVideoRef}
           className="video-background"
+          autoPlay={false} 
           muted
+          playsInline
           loop
-          style={{ display: showSecondVideo ? 'block' : 'none' }} 
+          style={{ display: showSecondVideo ? 'block' : 'none' }}
+          preload="auto"
+          webkit-playsinline="true"
+          x-webkit-airplay="allow"
         >
           <source src="/videos/loop-background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+
+        {isIOS && !showSecondVideo && (
+          <div className="video-fallback" style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.2)',
+            zIndex: 1
+          }}>
+            <button 
+              onClick={() => firstVideoRef.current?.play()}
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                padding: '10px 20px',
+                background: '#f2cc8f',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
+              Tap to Play Video
+            </button>
+          </div>
+        )}
 
         <div className="image-wrapper">
           <img className="animate__animated animate__lightSpeedInLeft" src={selfie} alt="Avatar" />

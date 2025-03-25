@@ -33,25 +33,25 @@ const useAnimation = <T extends HTMLElement = HTMLElement>(
         if (element) observer.observe(element);
 
         // Hover-triggered animation
-        const handleHover = () => {
-            if (element) {
-                element.classList.add('animate__animated', `animate__${hoverAnimationType}`);
-                element.addEventListener('animationend', () => {
-                    element.classList.remove('animate__animated', `animate__${hoverAnimationType}`);
-                }, { once: true });
-            }
-        };
+        // const handleHover = () => {
+        //     if (element) {
+        //         element.classList.add('animate__animated', `animate__${hoverAnimationType}`);
+        //         element.addEventListener('animationend', () => {
+        //             element.classList.remove('animate__animated', `animate__${hoverAnimationType}`);
+        //         }, { once: true });
+        //     }
+        // };
 
-        if (element) {
-            element.addEventListener('mouseenter', handleHover);
-        }
+        // if (element) {
+        //     element.addEventListener('mouseenter', handleHover);
+        // }
 
-        return () => {
-            if (element) {
-                observer.unobserve(element);
-                element.removeEventListener('mouseenter', handleHover);
-            }
-        };
+        // return () => {
+        //     if (element) {
+        //         observer.unobserve(element);
+        //         element.removeEventListener('mouseenter', handleHover);
+        //     }
+        // };
     }, [animationType, scrollDelay, hoverAnimationType]);
 
     return elementRef;

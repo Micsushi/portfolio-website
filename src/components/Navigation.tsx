@@ -141,22 +141,44 @@ function Navigation({ parentToChild, modeChange }: any) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" id="navigation" className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}>
-        <Toolbar className='navigation-bar'>
+        <Toolbar className='navigation-bar' sx={{
+          display: 'flex',
+          justifyContent: { xs: 'space-between', sm: 'flex-start' }
+        }}>
+          {/* Mobile menu button - left aligned */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ 
+              display: { sm: 'none' },
+              mr: 'auto' // Pushes everything else right
+            }}
           >
             <MenuIcon />
           </IconButton>
-          {mode === 'dark' ? (
-            <LightModeIcon onClick={() => modeChange()} />
-          ) : (
-            <DarkModeIcon onClick={() => modeChange()} />
-          )}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+
+          {/* Theme toggle - centered in mobile */}
+          <Box sx={{ 
+            position: { xs: 'absolute', sm: 'static' },
+            left: { xs: '50%', sm: 'auto' },
+            transform: { xs: 'translateX(-50%)', sm: 'none' },
+          }}>
+            {mode === 'dark' ? (
+              <LightModeIcon onClick={() => modeChange()} />
+            ) : (
+              <DarkModeIcon onClick={() => modeChange()} />
+            )}
+          </Box>
+
+          {/* Navigation items - hidden on mobile */}
+          <Box sx={{ 
+            flexGrow: 1,
+            display: { xs: 'none', sm: 'flex' },
+            justifyContent: 'center',
+            gap: '10px'
+          }}>
             {navItems.map((item) => (
               <Button
                 key={item[0]}
@@ -168,15 +190,21 @@ function Navigation({ parentToChild, modeChange }: any) {
               </Button>
             ))}
           </Box>
-          <IconButton
-            color="inherit"
-            aria-label="toggle sound"
-            edge="end"
-            onClick={toggleSound}
-            sx={{ ml: 2 }}
-          >
-            {soundEnabled ? <VolumeUpIcon /> : <VolumeOffIcon />}
-          </IconButton>
+
+          {/* Sound toggle - right aligned */}
+          <Box sx={{ 
+            ml: { sm: 2 },
+            marginLeft: 'auto' // Keeps it right-aligned
+          }}>
+            <IconButton
+              color="inherit"
+              aria-label="toggle sound"
+              edge="end"
+              onClick={toggleSound}
+            >
+              {soundEnabled ? <VolumeUpIcon /> : <VolumeOffIcon />}
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
       <nav>

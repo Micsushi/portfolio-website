@@ -5,7 +5,7 @@ import '../assets/styles/Footer.scss'
 function Footer() {
   return (
     <footer>
-      <div>
+      <div className='social_icons'>
         <a href="https://github.com/micsushi" target="_blank" rel="noreferrer"><GitHubIcon/></a>
         <a href="https://www.linkedin.com/in/wjshi/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
       </div>

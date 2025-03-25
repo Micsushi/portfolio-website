@@ -39,7 +39,7 @@ function Expertise() {
     return (
         <div className="container" id="expertise">
             <div className="skills-container">
-                <h1 ref={h1Ref}>Expertise</h1>
+                <h1 className="header" ref={h1Ref}>Expertise</h1>
                 <div className="skills-grid">
                     <div className="skill">
                         <FontAwesomeIcon icon={faReact} size="3x"/>

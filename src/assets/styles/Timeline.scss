@@ -1,38 +1,163 @@
-.vertical-timeline span {
-    color: white;
-    font-family: 'Courier Prime', monospace;
-}
+// Timeline.scss
+@import '../../index';
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
-}
+.vertical-timeline {
+  &::before {
+    background: linear-gradient(to bottom, 
+      #fff  0%, 
+      #b1aef7 20%, 
+      #6e69f6 50%, 
+      #544eef 80%, 
+      #423bfe 100%);
+    width: 4px;
+    box-shadow: 
+      0 0 10px #544eef,
+      0 0 20px #521fdc;
+  }
 
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
-}
-
-.svg-inline--fa {
-    color: white;
-}
-
-@media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
+  &-element {
+    margin: 3em 0;
+    
+    &-content {
+      background: rgba(51, 51, 110, 0.95);
+      border: 3px solid #544eef;
+      box-shadow: 
+        0 0 15px rgba(84, 78, 239, 0.7),
+        inset 0 0 10px rgba(84, 78, 239, 0.3);
+      border-radius: 8px;
+      transition: all 0.4s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 
+          0 0 2px #fff,
+          0 0 30px rgba(84, 78, 239, 0.9),
+          inset 0 0 35px rgba(84, 78, 239, 0.5);
+        border-color: #fff;
+      }
     }
+
+    &-icon {
+      background: #5000ca !important;
+      box-shadow: 
+        0 0 0 4px #a9a9ec,
+        0 0 15px #544eef,
+        0 0 30px #521fdc;
+      transition: all 0.4s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+        background: #7448ee !important;
+      }
+      
+      svg {
+        color: #fff !important;
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+      }
+    }
+
+    &-date {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      color: #fff !important;
+      text-shadow:  0 0 2px #fff;      
+      background: none;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}
+
+// Text styling
+.vertical-timeline {
+  &-element {
+    &-title {
+      color: #fff !important;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 15px rgba(165, 162, 239, 0.7);
+    }
+
+    &-subtitle {
+      color: #f2cc8f !important;
+      margin: 0.5rem 0;
+      font-weight: 600;
+      font-family: 'Lato', sans-serif;
+    }
+
+    p {
+      color: #e6dfdf !important;
+      line-height: 1.6;
+      
+      b {
+        color: #fff;
+        font-weight: 700;
+        text-shadow: 0 0 3px rgba(84, 78, 239, 0.7);
+      }
+    }
+
+    a {
+      color: #8158f0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #8158f0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover {
+        color: #f2cc8f;
+        
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 1170px) {
+  .vertical-timeline {
+    &-element {
+      margin: 2rem 0;
+      
+      &-date {
+        float: none !important;
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .vertical-timeline {
+    &-element {
+      &-icon {
+        width: 40px;
+        height: 40px;
+        left: 15px !important;
+      }
+      
+      &-content {
+        padding: 1.5rem !important;
+      }
+    }
+  }
 }

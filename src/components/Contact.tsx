@@ -40,7 +40,7 @@ function Contact() {
 
   return (
     <div className="contact-container" id="contact">
-      <h1 ref={h1Ref} className="contact-title">Contact Me</h1>
+      <h1 ref={h1Ref} className="header">Contact Me</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
         <p className="contact-description">
           Got a project waiting to be realized? Let's collaborate and make it happen!
