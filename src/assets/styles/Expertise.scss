@@ -57,10 +57,13 @@
 .flex-chips .MuiChip-root {
     margin-right: 0.5em;
     &:hover{
-        background-color: #dbd9ff!important;
+        background-color: #544eef!important;
         box-shadow: 
-        0 0 5px #fff,
+        0 0 10px #ffffff,
         0 0 15px #544eef;
+        span {
+            color: #f0eded; 
+        }
     }
 }
 

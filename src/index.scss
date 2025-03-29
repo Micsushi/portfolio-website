@@ -78,12 +78,16 @@ body, html {
   &::before {
     content: '';
     position: absolute;
-    top: 120%;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 90%;
+    left: 50%;
+    width: calc(180% - 10px);
+    height: 70%;
     background: #544eef;
-    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    transform: 
+      translateX(-50%)
+      perspective(1em) 
+      rotateX(40deg) 
+      scale(1, 0.35);
     filter: blur(1.5em);
     opacity: 0.7;
   }
@@ -223,6 +227,14 @@ body {
   overflow: hidden; 
 }
 
+.animate__animated.animate__lightSpeedInRight{
+  --animate-duration: 1.7s;
+}
+
+.animate__animated.animate__lightSpeedInLeft{
+  --animate-duration: 1.7s;
+}
+
 .animate__animated.animate__flash{
   --animate-duration: 0.7s;
 }
@@ -231,10 +243,6 @@ h1{
   color: #544eef;
   font-size: 2.5em;
   font-family: 'Orbitron', sans-serif;
-}
-
-h1:hover {
-  animation: glitch 1s linear infinite;
 }
 
 @keyframes glitch {
@@ -371,7 +379,7 @@ a {
 }
 
 .MuiInputBase-input {
-  color: black !important; /* Change 'black' to the color you desire */
+  color: black !important;
   visibility: visible !important;
   height: auto !important;
 }

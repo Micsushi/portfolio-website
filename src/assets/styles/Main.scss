@@ -13,6 +13,10 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.animate__animated.animate__flash{
+  --animate-duration: 1s;
+}
+
 .about-section {
   min-height: 95vh;
   display: flex;
@@ -237,7 +241,7 @@
     text-shadow: 0 0 5px rgba(230, 223, 223, 0.5);
 
     &:hover{
-      text-shadow: 0 0 10px rgba(230, 223, 223, 0.5);
+      text-shadow: 0 0 10px rgba(230, 223, 223, 0.8);
     }
   }
 
@@ -253,6 +257,13 @@
       0 0 10px #544eef,
       0 0 15px #521fdc;
     transition: all 0.3s ease;
+
+    &:hover{
+      text-shadow: 
+        0 0 10px #fff,
+        0 0 15px #544eef,
+        0 0 20px #521fdc;
+    }
   }
 }
 

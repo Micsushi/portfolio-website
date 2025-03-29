@@ -1,7 +1,6 @@
 Source code for my portfolio website
 
 TODO: 
-make everything neon, menu, contact, side
 improve text when adjusting size
 fix css organization
 fix mobile home screen size

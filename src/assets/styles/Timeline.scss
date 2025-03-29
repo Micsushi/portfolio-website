@@ -19,13 +19,9 @@
     margin: 3em 0;
     
     &-content {
-      background: rgba(51, 51, 110, 0.95);
-      border: 3px solid #544eef;
-      box-shadow: 
-        0 0 15px rgba(84, 78, 239, 0.7),
-        inset 0 0 10px rgba(84, 78, 239, 0.3);
-      border-radius: 8px;
+      background: rgba(51, 51, 110, 0.95);      
       transition: all 0.4s ease;
+      @include glowing-border-effect();
       
       &:hover {
         transform: translateY(-5px);
@@ -40,15 +36,10 @@
     &-icon {
       background: #5000ca !important;
       box-shadow: 
-        0 0 0 4px #a9a9ec,
-        0 0 15px #544eef,
-        0 0 30px #521fdc;
+        0 0 0 4px #8282f4,
+        0 0 15px #3c36e6,
+        0 0 30px #4d13eb;
       transition: all 0.4s ease;
-      
-      &:hover {
-        transform: scale(1.1);
-        background: #7448ee !important;
-      }
       
       svg {
         color: #fff !important;

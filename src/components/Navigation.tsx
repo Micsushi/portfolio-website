@@ -52,13 +52,13 @@ function Navigation({ parentToChild, modeChange }: any) {
   // Toggle sound on/off
   const toggleSound = () => {
     if (!soundEnabled) {
-      themeSoundRef.current = new Audio(process.env.PUBLIC_URL + '/theme.mp3');
-      themeSoundRef.current.volume = 0.4;
+      themeSoundRef.current = new Audio(process.env.PUBLIC_URL + '/theme.mp4');
+      themeSoundRef.current.volume = 0.1;
       themeSoundRef.current.loop = true;
       themeSoundRef.current.play().catch((error) => {
         console.error('Failed to play theme music:', error);
       });
-      setToastMessage("Sound is ON, enjoy one of my favourite songs :D");
+      setToastMessage("Sound is ON");
     } else {
       if (themeSoundRef.current) {
         themeSoundRef.current.pause();

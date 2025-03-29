@@ -1,3 +1,5 @@
+@import '../../index'; 
+
 .contact-container {
   padding: 6% 10% 8% 10%;
   background-color: rgba(255, 255, 255, 0.05);
@@ -46,24 +48,17 @@
   }
 
   .MuiOutlinedInput-notchedOutline {
-    border-color: rgba(255, 255, 255, 0.23);
+    border: var(--primary-border);
+    box-shadow: 
+      0 0 5px #544eef,
+      0 0 10px #521fdc;
   }
 
   .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: #1976d2;
-  }
-
-  .MuiFormHelperText-root {
-    color: #f44336;
-  }
-  
-  .MuiInputBase-input::placeholder {
-    color: rgb(255, 255, 255);
-    opacity: 1;
+    border-color: #ffffffad;
+    box-shadow: 
+        0 0 5px #fff,
+        0 0 10px #544eef;
   }
 
   .MuiInputBase-input {
@@ -95,15 +90,7 @@
   padding: 10px 30px;
   font-size: 1.2rem;
   text-transform: none;
-
-  &:hover {
-    background-color: #544eef;
-  }
-
-  .MuiButton-endIcon {
-    font-size: 1.2em;
-    margin-left: 8px;
-  }
+  @include glowing-border-effect();
 }
 
 @media (max-width: 768px) {

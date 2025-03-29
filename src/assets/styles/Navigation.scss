@@ -56,27 +56,12 @@
   }
 }
 
-/* Navigation items */
-.navigation-bar .nav-list-item, 
-.navigation-bar .MuiButton-root {
-  position: relative;
-  transition: color 0.3s ease, margin 0.3s ease, font-size 0.3s ease; /* Added font-size transition */
-  padding-bottom: 15px;
-  color: inherit;
-  font-size: 1.5rem; /* Default font size */
-  font-weight: 700;
-  margin: 0 10px; /* Default margin */
-  letter-spacing: 2px;
-  text-shadow: 
-    0 0 1px #ffffffb3,
-    0 0 5px #544eef,
-    0 0 8px #521fdc;
-}
+
 
 /* Navigation items */
 .navigation-bar {
-  .MuiSvgIcon-root { // Target all Material-UI icons
-    font-size: 1.5rem; // Base size matching nav items
+  .MuiSvgIcon-root {
+    font-size: 1.5rem; 
     transition: all 0.3s ease;
     filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
     margin: auto 20px;
@@ -101,9 +86,19 @@
     margin: 10px 10px;
     letter-spacing: 2px;
     text-shadow: 
-      0 0 1px #ffffffb3,
+      0 0 1px #fff,               
+      0 0 3px #544eef,           
+      0 0 5px #521fdc,           
+      0 0 10px rgba(130, 88, 240, 0.7); 
+  }
+
+  .nav-list-item:hover, 
+  .MuiButton-root:hover {
+    text-shadow: 
+      0 0 3px #fff,
       0 0 5px #544eef,
-      0 0 8px #521fdc;
+      0 0 10px #521fdc,
+      0 0 15px rgba(130, 88, 240, 0.9);
   }
 }
 
@@ -170,10 +165,11 @@
 /* Active state */
 .nav-list-item.active, .MuiButton-root.active {
   color: #8158f0;
-  text-shadow:  
-    0 0 1px #ffffffb3,
-    0 0 10px #544eef,
-    0 0 15px #521fdc;
+  text-shadow: 
+      0 0 1px #fff,               
+      0 0 3px #544eef,           
+      0 0 5px #521fdc,           
+      0 0 10px rgba(130, 88, 240, 0.7); 
 }
 
 .nav-list-item.active::after, .MuiButton-root.active::after {
