@@ -52,6 +52,14 @@ function Main() {
           muted
           playsInline
           onEnded={handleFirstVideoEnd}
+          onLoadedMetadata={(e) => {
+            e.currentTarget.currentTime = 2.5;
+          }}
+          onCanPlay={(e) => {
+            if (e.currentTarget.currentTime < 2.5) {
+              e.currentTarget.currentTime = 2.5;
+            }
+          }}
           style={{ display: showSecondVideo ? 'none' : 'block' }}
           preload="auto"
           webkit-playsinline="true"
