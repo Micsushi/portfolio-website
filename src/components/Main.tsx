@@ -28,23 +28,11 @@ function Main() {
       if (firstVideoRef.current) {
         firstVideoRef.current.play().catch(error => {
           console.log('Autoplay prevented:', error);
-          document.body.addEventListener('click', playVideosOnInteraction, { once: true });
         });
       }
     };
 
-    const playVideosOnInteraction = () => {
-      firstVideoRef.current?.play();
-      if (showSecondVideo) {
-        secondVideoRef.current?.play();
-      }
-    };
-
     handleFirstVideoPlay();
-
-    return () => {
-      document.body.removeEventListener('click', playVideosOnInteraction);
-    };
   }, [showSecondVideo]);
 
   const handleFirstVideoEnd = () => {
@@ -88,35 +76,6 @@ function Main() {
           <source src="/videos/loop-background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
-        {isIOS && !showSecondVideo && (
-          <div className="video-fallback" style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0,0,0,0.2)',
-            zIndex: 1
-          }}>
-            <button 
-              onClick={() => firstVideoRef.current?.play()}
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                padding: '10px 20px',
-                background: '#f2cc8f',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer'
-              }}
-            >
-              Tap to Play Video
-            </button>
-          </div>
-        )}
 
         <div className="image-wrapper">
           <img className="animate__animated animate__lightSpeedInLeft" src={selfie} alt="Avatar" />

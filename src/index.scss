@@ -8,7 +8,35 @@ body, html {
   overflow-x: hidden;
   width: 100%;
 }
+html {
+  &::before, &::after {
+    content: '';
+    position: fixed;
+    width: 2px;
+    height: 100vh;
+    top: 0;
+    background: linear-gradient(
+      to bottom, 
+      #544eef 0%, 
+      #fff 50%, 
+      #544eef 100%, 
+    );
+    box-shadow: 
+      0 0 10px #fff,
+      0 0 20px #544eef,
+      0 0 30px #521fdc;
+    z-index: 10;
+    pointer-events: none;
+  }
 
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
 :root {
   --primary-border: 3px solid #544eef;
   --primary-glow: 

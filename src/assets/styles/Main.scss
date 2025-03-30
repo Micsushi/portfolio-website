@@ -1,112 +1,39 @@
-@import '../../index'; 
+@import '../../index';
 
 .container {
-  margin-top: 64px;
-  width: 100%;
+  margin-top: 0;
+  width: 100vw;
+  height: auto;
+  min-height: 100dvh; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .dark-mode .about-section {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.animate__animated.animate__flash{
+.animate__animated.animate__flash {
   --animate-duration: 1s;
 }
 
 .about-section {
-  min-height: 95vh;
+  width: 100%;
+  height: auto; // Changed from 100%
+  min-height: 100dvh;
   display: flex;
   gap: clamp(30px, 5vw, 60px);
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 0px clamp(5%, 8vw, 15%);
+  padding: 20px clamp(5%, 8vw, 15%);
   position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-  flex-grow: 1;
+  box-sizing: border-box;
+  // Remove overflow: hidden
   background-color: #171729;
-
-  
-  &::before {
-    left: 0;
-    background: linear-gradient(to bottom, 
-      transparent 0%, 
-      #544eef 20%, 
-      #fff 50%, 
-      #544eef 80%, 
-      transparent 100%);
-    box-shadow: 
-      0 0 10px #fff,
-      0 0 20px #544eef,
-      0 0 30px #521fdc;
-  }
-  
-  &::after {
-    right: 0;
-    background: linear-gradient(to bottom, 
-      transparent 0%, 
-      #544eef 20%, 
-      #fff 50%, 
-      #544eef 80%, 
-      transparent 100%);
-    box-shadow: 
-      0 0 10px #fff,
-      0 0 20px #544eef,
-      0 0 30px #521fdc;
-  }
-
-  // Digital Noise Overlay (subtle)
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(rgba(18, 16, 16, 0.1) 50%, 
-      transparent 50%),
-      linear-gradient(90deg, rgba(255, 0, 0, 0.03), 
-      rgba(0, 255, 0, 0.02), 
-      rgba(0, 0, 255, 0.03));
-    background-size: 100% 2px, 3px 3px;
-    z-index: 1;
-    pointer-events: none;
-  }
-}
-
-@keyframes edgePulse {
-  0%, 100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-// Corner Brackets
-.corner {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  z-index: 3;
-  
-  &::before, &::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #544eef;
-    box-shadow: 
-      0 0 5px #fff,
-      0 0 10px #544eef;
-    animation: cornerFlicker 2s infinite alternate;
-  }
 }
 
 .top-left {
@@ -185,16 +112,6 @@
   }
 }
 
-@keyframes cornerFlicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.3;
-  }
-}
-
-// Video Background
 .video-background {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -209,7 +126,6 @@
   z-index: 1;
 }
 
-// Content Styling
 .content {
   margin-top: clamp(-30px, -3vh, 0px);
   text-align: left;
@@ -231,24 +147,21 @@
 
   p {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    margin-bottom: clamp(10px, 2vh, 20px);
+    margin: 0 0 clamp(10px, 2vh, 20px);
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 1px;
     color: #f2cc8f;
     font-weight: bold;
     text-shadow: 0 0 5px rgba(230, 223, 223, 0.5);
 
-    &:hover{
+    &:hover {
       text-shadow: 0 0 10px rgba(230, 223, 223, 0.8);
     }
   }
 
   h1 {
     font-size: clamp(2.5rem, 8vw, 6rem);
-    margin-block-start: 0px;
-    margin-block-end: 0px;
+    margin: 0;
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 2px;
     color: #e6dfdf;
@@ -258,7 +171,7 @@
       0 0 15px #521fdc;
     transition: all 0.3s ease;
 
-    &:hover{
+    &:hover {
       text-shadow: 
         0 0 10px #fff,
         0 0 15px #544eef,
@@ -267,7 +180,6 @@
   }
 }
 
-// Image Wrapper
 .image-wrapper {
   z-index: 2;
   position: relative;
@@ -282,141 +194,58 @@
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-// Responsive Styles
 @media (max-width: 768px) {
   .about-section {
-    gap: 90px;
     flex-direction: column;
-    padding: 0px 5%;
+    padding: 20px 5%;
     text-align: center;
-    justify-content: center;
-    margin-top: -120px;
-    min-height: auto;
-    padding-bottom: 40px;
   }
 
-  .title {
-    font-size: clamp(1.8rem, 6vw, 3rem);
-  }
-
-  .about-section .content {
+  .content {
     text-align: center;
 
     .social_icons {
       justify-content: center;
+      
       svg {
         font-size: clamp(1.8rem, 6vw, 3rem);
       }
     }
 
     p {
+      margin-bottom: 60px;
       font-size: clamp(1.2rem, 4vw, 1.8rem);
-      margin-bottom: 120px;
     }
 
     h1 {
+      margin-top: 50px;
+      margin-bottom: 10px;
       font-size: clamp(2rem, 7vw, 3.2rem);
     }
   }
 
-  .about-section .image-wrapper img {
+  .image-wrapper img {
     width: clamp(120px, 40vw, 200px);
-  }
-
-  // Adjust corner brackets for mobile
-  .corner {
-    width: 30px;
-    height: 30px;
-    
-    &::before, &::after {
-      width: 15px;
-      height: 15px;
-    }
   }
 }
 
 @media (max-width: 480px) {
   .about-section {
-    margin-top: -80px;
-    gap: 60px;
+    gap: 30px;
+    padding: 20px 15px;
   }
 
-  .about-section .content {
-    p {
-      margin-bottom: 80px;
-    }
+  .content p {
+    margin-bottom: 40px;
   }
 }
 
-/* iOS-specific adjustments */
+/* iOS specific fixes */
 @supports (-webkit-touch-callout: none) {
   .about-section {
-    margin-top: -60px;
-  }
-  .about-section .content p {
-    margin-bottom: 60px;
-  }
-}
-
-// Additional Tech Elements
-.tech-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(84, 78, 239, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(84, 78, 239, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.3;
-}
-
-.status-bar {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 4px;
-  background: rgba(84, 78, 239, 0.3);
-  border-radius: 2px;
-  z-index: 3;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      #544eef 20%, 
-      #fff 50%, 
-      #544eef 80%, 
-      transparent 100%);
-    animation: statusScan 6s linear infinite;
-  }
-}
-
-@keyframes statusScan {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
+    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
