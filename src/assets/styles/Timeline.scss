@@ -91,11 +91,14 @@
     }
 
     a {
-      color: #8158f0;
+      color: #bd74f5;
       text-decoration: none;
       font-weight: bold;
       transition: all 0.3s ease;
       position: relative;
+      text-shadow: 
+        0 0 1px white, 
+        0 0 2px #bd74f5;
       
       &::after {
         content: '';

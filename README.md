@@ -1,7 +1,6 @@
 Source code for my portfolio website
 
 TODO: 
-improve text when adjusting size
 fix css organization
 fix mobile home screen size
 add photo slider

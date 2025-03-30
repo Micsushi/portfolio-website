@@ -160,11 +160,16 @@ function Navigation({ parentToChild, modeChange }: any) {
           </IconButton>
 
           {/* Theme toggle - centered in mobile */}
-          <Box sx={{ 
-            position: { xs: 'absolute', sm: 'static' },
-            left: { xs: '50%', sm: 'auto' },
-            transform: { xs: 'translateX(-50%)', sm: 'none' },
-          }}>
+          <Box 
+            className="theme-toggle-container"
+            sx={{
+              position: { xs: 'absolute', sm: 'static' },
+              left: { xs: '50%', sm: 'auto' },
+              transform: { xs: 'translateX(-50%)', sm: 'none' },
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          >
             {mode === 'dark' ? (
               <LightModeIcon onClick={() => modeChange()} />
             ) : (
