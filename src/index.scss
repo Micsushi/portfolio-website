@@ -484,3 +484,12 @@ a {
     }
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  // Disable all hover effects
+  *:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
