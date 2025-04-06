@@ -4,55 +4,35 @@ type AnimationType = 'heartBeat' | 'shakeY' | 'fadeInDown' | 'flash' | 'pulse' |
 
 const useAnimation = <T extends HTMLElement = HTMLElement>(
     animationType: AnimationType = 'flash', 
-    scrollDelay: number = 200, 
-    hoverAnimationType: AnimationType = 'none'
+    scrollDelay: number = 200
 ) => {
     const elementRef = useRef<T>(null);
+    const hasAnimated = useRef(false); 
 
     useEffect(() => {
         const element = elementRef.current;
+        if (!element || hasAnimated.current) return; 
 
-        // Scroll-triggered animation
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('animate__animated', `animate__${animationType}`);
-                        }, scrollDelay);
-                    } else {
-                        entry.target.classList.remove('animate__animated', `animate__${animationType}`);
-                    }
-                });
+                const [entry] = entries;
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        element.classList.add('animate__animated', `animate__${animationType}`);
+                        hasAnimated.current = true; 
+                        observer.disconnect(); 
+                    }, scrollDelay);
+                }
             },
-            {
-                threshold: 0.5,
-            }
+            { threshold: 1 }
         );
 
-        if (element) observer.observe(element);
+        observer.observe(element);
 
-        // Hover-triggered animation
-        // const handleHover = () => {
-        //     if (element) {
-        //         element.classList.add('animate__animated', `animate__${hoverAnimationType}`);
-        //         element.addEventListener('animationend', () => {
-        //             element.classList.remove('animate__animated', `animate__${hoverAnimationType}`);
-        //         }, { once: true });
-        //     }
-        // };
-
-        // if (element) {
-        //     element.addEventListener('mouseenter', handleHover);
-        // }
-
-        // return () => {
-        //     if (element) {
-        //         observer.unobserve(element);
-        //         element.removeEventListener('mouseenter', handleHover);
-        //     }
-        // };
-    }, [animationType, scrollDelay, hoverAnimationType]);
+        return () => {
+            observer.disconnect();
+        };
+    }, [animationType, scrollDelay]);
 
     return elementRef;
 };

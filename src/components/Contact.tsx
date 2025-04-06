@@ -9,7 +9,7 @@ import useAnimation from './useAnimation';
 
 interface IFormInputs {
   name: string;
-  email: string;
+  contact: string;
   message: string;
 }
 
@@ -18,7 +18,10 @@ function Contact() {
   const [notification, setNotification] = useState<string | null>(null);
 
   const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-    const emailData: Record<string, unknown> = { ...data };
+    const emailData = {
+      ...data,
+      email: data.contact
+    };
     emailjs.send(
       'service_i4f0bbl', 
       'template_hkc0naq', 
@@ -64,7 +67,7 @@ function Contact() {
             )}
           />
           <Controller
-            name="email"
+            name="contact"
             control={control}
             defaultValue=""
             rules={{ 
@@ -77,7 +80,7 @@ function Contact() {
             render={({ field, fieldState: { error } }) => (
               <TextField
                 {...field}
-                label="Email / Phone"
+                label="Your Email address"
                 placeholder="How can I reach you?"
                 fullWidth
                 error={!!error}

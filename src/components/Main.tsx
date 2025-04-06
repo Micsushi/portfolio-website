@@ -6,9 +6,7 @@ import selfie from "../assets/images/selfie.jpg";
 import '../assets/styles/Main.scss';
 
 function Main() {
-  const firstVideoRef = useRef<HTMLVideoElement>(null); 
-  const secondVideoRef = useRef<HTMLVideoElement>(null); 
-  const [showSecondVideo, setShowSecondVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null); 
   const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
@@ -24,34 +22,36 @@ function Main() {
       linkElement?.classList.add('animate__animated', 'animate__flash');
     }, 2000);
 
-    const handleFirstVideoPlay = () => {
-      if (firstVideoRef.current) {
-        firstVideoRef.current.play().catch(error => {
+    const handleVideoPlay = () => {
+      if (videoRef.current) {
+        videoRef.current.play().catch(error => {
           console.log('Autoplay prevented:', error);
         });
       }
     };
 
-    handleFirstVideoPlay();
-  }, [showSecondVideo]);
+    handleVideoPlay();
+  }, []);
 
-  const handleFirstVideoEnd = () => {
-    setShowSecondVideo(true);
-    secondVideoRef.current?.play()?.catch(error => {
-      console.log('Second video play failed:', error);
-    });
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 6;
+      videoRef.current.play().catch(error => {
+        console.log('Video replay failed:', error);
+      });
+    }
   };
 
   return (
     <div className="container" id="home">
       <div className="about-section">
         <video
-          ref={firstVideoRef}
+          ref={videoRef}
           className="video-background"
           autoPlay={!isIOS}
           muted
           playsInline
-          onEnded={handleFirstVideoEnd}
+          onEnded={handleVideoEnd}
           onLoadedMetadata={(e) => {
             e.currentTarget.currentTime = 2.5;
           }}
@@ -60,28 +60,11 @@ function Main() {
               e.currentTarget.currentTime = 2.5;
             }
           }}
-          style={{ display: showSecondVideo ? 'none' : 'block' }}
           preload="auto"
           webkit-playsinline="true"
           x-webkit-airplay="allow" 
         >
-          <source src="/videos/intro.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        <video
-          ref={secondVideoRef}
-          className="video-background"
-          autoPlay={false} 
-          muted
-          playsInline
-          loop
-          style={{ display: showSecondVideo ? 'block' : 'none' }}
-          preload="auto"
-          webkit-playsinline="true"
-          x-webkit-airplay="allow"
-        >
-          <source src="/videos/loop-background.mp4" type="video/mp4" />
+          <source src="/videos/bg-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
