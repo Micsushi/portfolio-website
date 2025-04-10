@@ -1,0 +1,146 @@
+// About.scss
+@import '../../index';
+
+.about-container {
+  position: relative;
+  margin-top: -30px;
+  padding: 5% 10%;
+  
+  @media (max-width: 768px) {
+    padding: 5% 5%;
+  }
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+.text-content {
+  text-align: justify;
+  
+  p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #e6dfdf;
+    
+    b {
+      color: #f2cc8f;
+      text-shadow: 0 0 5px rgba(242, 204, 143, 0.5);
+    }
+  }
+}
+
+.slider-container {
+  position: relative;
+  width: 350px;
+  margin: 0 -20px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid #544eef;
+  box-shadow: 0 0 15px #544eef, 0 0 30px #521fdc;
+
+  &.top-right {
+    float: right;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    shape-outside: margin-box;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    float: none;
+    margin: 20px auto !important;
+    
+    &.top-right {
+      order: -1;
+    }
+    
+    &.bottom-left {
+      order: 1;
+    }
+  }
+}
+
+.slider {
+  .slider-image {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slider-caption {
+    padding: 15px;
+    background: rgba(23, 23, 41, 0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px #544eef;
+    
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: none;
+      
+      li {
+        margin-bottom: 8px;
+        position: relative;
+        
+        &:before {
+          content: "•";
+          color: #544eef;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+      }
+    }
+  }
+
+  .slider-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(84, 78, 239, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px #544eef;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+
+    &.prev {
+      left: 15px;
+    }
+
+    &.next {
+      right: 15px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .text-content p {
+    font-size: 1rem;
+  }
+  
+  .slider {
+    .slider-image {
+      height: 200px;
+    }
+    
+    .slider-caption {
+      padding: 10px;
+      font-size: 0.8rem;
+    }
+  }
+}

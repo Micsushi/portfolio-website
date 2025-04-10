@@ -21,7 +21,7 @@ import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import Toast from './Toast';
 
 const drawerWidth = 240;
-const navItems = [['Home', 'home'], ['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
+const navItems = [['Home', 'home'], ['About', 'about'], ['Expertise', 'expertise'], ['History', 'history'], ['Projects', 'projects'], ['Contact', 'contact']];
 
 function Navigation({ parentToChild, modeChange }: any) {
   const { mode } = parentToChild;
