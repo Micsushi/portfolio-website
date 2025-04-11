@@ -38,34 +38,65 @@
           0 0 16px rgba(242, 204, 143, 0.6),
           0 0 24px rgba(242, 204, 143, 0.3);
       }
+      
+      &.glow-4 {
+        color: #f2cc8f;
+        text-shadow: 
+          0 0 10px rgba(242, 204, 143, 0.9),
+          0 0 20px rgba(242, 204, 143, 0.7),
+          0 0 30px rgba(242, 204, 143, 0.5);
+      }
+      
+      &.glow-5 {
+        color: #f2cc8f;
+        text-shadow: 
+          0 0 12px rgba(242, 204, 143, 1),
+          0 0 24px rgba(242, 204, 143, 0.8),
+          0 0 36px rgba(242, 204, 143, 0.6);
+      }
     }
   }
 
   @media (max-width: 480px) {
     p {
+      
+      b{
+        font-weight: 900!important;
+      }
       .word {
         &.glow-1 {
           text-shadow: 
-            0 0 5px rgba(242, 204, 143, 0.6),
-            0 0 10px rgba(237, 194, 123, 0.4);
+            0 0 15px rgba(242, 204, 143, 0.6),
+            0 0 20px rgba(237, 194, 123, 0.4);
         }
         
         &.glow-2 {
           text-shadow: 
-            0 0 10px rgba(242, 204, 143, 0.8),
-            0 0 15px rgba(242, 204, 143, 0.6);
+            0 0 15px rgba(242, 204, 143, 0.8),
+            0 0 20px rgba(242, 204, 143, 0.6);
         }
         
         &.glow-3 {
           text-shadow: 
-            0 0 15px rgb(239, 195, 124),
-            0 0 20px rgba(242, 197, 126, 0.8);
+            0 0 20px rgb(239, 195, 124),
+            0 0 25px rgba(242, 197, 126, 0.8);
+        }
+        
+        &.glow-4 {
+          text-shadow: 
+            0 0 30px rgb(239, 195, 124),
+            0 0 35px rgba(242, 197, 126, 0.9);
+        }
+        
+        &.glow-5 {
+          text-shadow: 
+            0 0 35px rgb(239, 195, 124),
+            0 0 40px rgba(242, 197, 126, 1);
         }
       }
     }
   }
 }
-
 
 @keyframes glowLine {
   0% {

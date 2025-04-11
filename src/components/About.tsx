@@ -42,18 +42,20 @@ function About() {
       let currentIndex = 0;
 
       const highlightWords = () => {
-        words.forEach(word => {
-          word.classList.remove('glow-1', 'glow-2', 'glow-3');
-        });
+      words.forEach(word => {
+        word.classList.remove('glow-1', 'glow-2', 'glow-3', 'glow-4', 'glow-5');
+      });
 
-        if (words[currentIndex]) words[currentIndex].classList.add('glow-1');
-        if (words[currentIndex + 1]) words[currentIndex + 1].classList.add('glow-2');
-        if (words[currentIndex + 2]) words[currentIndex + 2].classList.add('glow-3');
+      if (words[currentIndex]) words[currentIndex].classList.add('glow-1');
+      if (words[currentIndex + 1]) words[currentIndex + 1].classList.add('glow-2');
+      if (words[currentIndex + 2]) words[currentIndex + 2].classList.add('glow-3');
+      if (words[currentIndex + 3]) words[currentIndex + 3].classList.add('glow-4');
+      if (words[currentIndex + 4]) words[currentIndex + 4].classList.add('glow-5');
 
-        currentIndex = (currentIndex + 1) % Math.max(1, words.length - 2);
-      };
+      currentIndex = (currentIndex + 1) % Math.max(1, words.length - 4);
+    };
 
-      const intervalId = setInterval(highlightWords, 300);
+      const intervalId = setInterval(highlightWords, 100);
 
       return () => clearInterval(intervalId);
     }
@@ -65,10 +67,9 @@ function About() {
         <h1 className="header" ref={h1Ref}>About Me</h1>
         
         <div className="text-content" ref={textContentRef}>
-          <p>Hi! I'm Michael from South Africa!</p>
+          <p>Hi! I'm <b>Michael</b> from South Africa!</p>
           <p>
-            I am currently studying Computer Science at the
-            University of Alberta. I'm also a Software Engineer Intern at INVIDI Technologies.
+            I am currently studying Computer Science at the <b>University of Alberta</b>. I'm also a Software Engineer Intern at <b> INVIDI Technologies</b>.
             Outside of work and school, I'm always on the move — whether that's on the dodgeball
             court, the soccer field, or in the kitchen experimenting with dishes from around the world.
           </p>
