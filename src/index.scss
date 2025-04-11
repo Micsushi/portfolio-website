@@ -146,14 +146,6 @@ html {
     transition: opacity 0.3s ease;
     pointer-events: none;
   }
-
-  &:hover {
-    animation: glitch-box 1s linear infinite;
-    
-    &::before {
-      animation: glitch-glow 1s linear infinite;
-    }
-  }
 }
 
   .social_icons a {
@@ -178,65 +170,6 @@ html {
       color: #8158f0;
     }
   }
-
-@keyframes glitch-box {
-  0% {
-    text-shadow: 
-      0 0 8px #fff,
-      0 0 15px #544eef,
-      0 0 20px #521fdc;
-    box-shadow: 
-      0 0 1px #ffffffac,
-      inset 0 0 3px #ffffffac,
-      0 0 10px #544eef,
-      inset 0 0 10px #544eef,
-      0 0 40px #521fdc,
-      inset 0 0 40px #521fdc;
-    transform: translate(0);
-  }
-  33% {
-    text-shadow: 
-      0 0 8px #fff,
-      0 0 15px #0000ff,
-      0 0 20px #ff00ff;
-    box-shadow: 
-      0 0 1px #0000ff,
-      inset 0 0 3px #ff00ff,
-      0 0 20px #00ffff,
-      inset 0 0 20px #ff0000,
-      0 0 40px #ffff00,
-      inset 0 0 40px #521fdc;
-    transform: translate(3px, 3px);
-  }
-  67% {
-    text-shadow: 
-      0 0 8px #fff,
-      0 0 15px #ff00ff,
-      0 0 20px #ffff00;
-    box-shadow: 
-      0 0 1px #ff00ff,
-      inset 0 0 3px #ffff00,
-      0 0 20px #ff0000,
-      inset 0 0 20px #00ffff,
-      0 0 40px #544eef,
-      inset 0 0 40px #0000ff;
-    transform: translate(-3px, -3px);
-  }
-  100% {
-    text-shadow: 
-      0 0 8px #fff,
-      0 0 15px #544eef,
-      0 0 20px #521fdc;
-    box-shadow: 
-      0 0 1px #ffffffac,
-      inset 0 0 3px #ffffffac,
-      0 0 20px #544eef,
-      inset 0 0 20px #544eef,
-      0 0 40px #521fdc,
-      inset 0 0 40px #521fdc;
-    transform: translate(0);
-  }
-}
 
 @keyframes glitch-glow {
   0%, 100% {
