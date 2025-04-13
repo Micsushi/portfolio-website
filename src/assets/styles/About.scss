@@ -156,18 +156,19 @@
     padding: 15px 0;
     margin: 10px 0;
     background: rgba(57, 57, 183, 0.9);
-    color: #fff;
+    color: #fff!important;
     font-weight: 900;
     font-size: 1.1rem;
     text-shadow: 0 0 5px #544eef;
     text-align: center;
     width: 100%;
-    
+
     p {
       font-size: 1.2rem;
       margin: 0 auto;
       padding: 0;
       max-width: 90%;
+      color: #fff!important;
     }
   }
 

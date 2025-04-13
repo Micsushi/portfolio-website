@@ -147,7 +147,7 @@
     margin: 0 0 clamp(10px, 2vh, 20px);
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 1px;
-    color: #f2cc8f;
+    color: #f2cc8f!important;
     font-weight: bold;
     text-shadow: 0 0 5px rgba(230, 223, 223, 0.5);
 
@@ -161,7 +161,7 @@
     margin: 0;
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 2px;
-    color: #e6dfdf;
+    color: #e6dfdf!important;
     text-shadow: 
       0 0 5px #fff,
       0 0 10px #544eef,

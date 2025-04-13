@@ -303,7 +303,7 @@ a {
 
 .navigation-bar-responsive {
   span, p {
-    color: #0d1116;
+    color: #fff;
     font-family: "Lato", sans-serif;
   }
 }
@@ -351,68 +351,185 @@ a {
 }
 
 .light-mode {
-  background-color: #c4c4df;
+  background-color: #f5f7ff; 
+  color: #2d3748; 
 
-  p, a, h1, h2, h3, h4, h5, label{
-    color: #000000 ;
+  p, a, h1, h2, h3, h4, h5, label, code {
+    color: #2d3748;
+  }
+  
+  b{
+    color: #6c5ce7!important;
   }
 
   .navigation-bar {
-    background-color: #524ea0;
+    background-color: #6c5ce7;
+    box-shadow: 0 2px 15px rgba(108, 92, 231, 0.3);
+    
+    .MuiButton-root {
+      color: white;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    
+    svg {
+      color: white;
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+    }
   }
 
-  button{
-    color: #000000 ;
+  button {
+    color: #2d3748;
+    &.MuiButton-contained {
+      background-color: #6c5ce7;
+      color: white;
+      &:hover {
+        background-color: #5a4bd1;
+      }
+    }
   }
 
-  .title{
-    color: #a96a03;
+  a {
+    color: #6c5ce7;
+    &:hover {
+      color: #4a3fbb;
+    }
   }
 
-  a:hover {
-    color: #70519e;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-  }
-
-  .navigation-bar svg {
-    color: #0d1116;
+  .header {
+    color: #6c5ce7;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 5px solid #6c5ce7;
+    box-shadow: 
+      0 0 10px rgba(58, 35, 235, 0.3),
+      inset 0 0 5px rgba(64, 43, 222, 0.8);
+    text-shadow: none;
+    
+    &::before {
+      background: #6c5ce7;
+      opacity: 0.8;
+    }
   }
 
   .about-section {
+    background-color: #f0f2ff;
     background-image: url("./assets/images/bg-light.png");
   }
 
-  .skills-container svg {
-    color: #0d1116;
+  .contact-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .skills-container {
+    svg {
+      color: #4a5568;
+    }
+    
+    .skill {
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
   }
 
   .chip {
-    background-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    background-color: white !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    
+    &:hover {
+      background-color: #6c5ce7 !important;
+      color: white !important;
+      box-shadow: 0 2px 10px rgba(108, 92, 231, 0.3);
+    }
   }
 
-  .vertical-timeline::before {
-    background-color: rgba(0, 0, 0, 0.08);
+  .vertical-timeline {
+    &::before {
+      background: linear-gradient(to bottom, #e2e8f0 0%, #c3d0ff 100%);
+    }
+    
+    &-element {
+      &-content {
+        background: white;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        
+        &:hover {
+          box-shadow: 0 5px 20px rgba(108, 92, 231, 0.2);
+        }
+      }
+      
+      &-icon {
+        background: #6c5ce7 !important;
+        box-shadow: 0 0 0 4px white, 0 3px 15px rgba(108, 92, 231, 0.4);
+      }
+      
+      &-title {
+        color: #4a5568 !important;
+      }
+      
+      &-subtitle {
+        color: #6c5ce7 !important;
+      }
+      
+      p {
+        color: #4a5568 !important;
+      }
+    }
   }
 
-  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  .project {
+    h2 {
+      color: #6c5ce7;
+      text-shadow: none;
+      
+      &:hover {
+        color: #4a3fbb;
+      }
+    }
+    
+    .project-image {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+    }
   }
 
-  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
-    color: gray;
+  .MuiInputBase-root {
+    background-color: white !important;
+    
+    .MuiInputLabel-root {
+      color: #718096;
+    }
+    
+    .MuiOutlinedInput-notchedOutline {
+      border-color: #e2e8f0;
+    }
   }
 
-  .vertical-timeline-element-content-arrow {
-    border-right: 7px solid rgba(0, 0, 0, 0.08) !important;
+  .social_icons a {
+    color: #6c5ce7;
+    
+    &::after {
+      background: #6c5ce7;
+    }
+    
+    &:hover {
+      color: #4a3fbb;
+    }
   }
 
-  .flex-chips .chip-title {
-    color: #0d1116;
+  .navigation-bar-responsive {
+    background: white !important;
+    
+    .mobile-menu-top {
+      color: #6c5ce7 !important;
+    }
+    
+    .MuiDivider-root {
+      background-color: #e2e8f0;
+    }
   }
-  .vertical-timeline-element-date {
-    color: black !important;
-  }  
 }
 
 @media screen {

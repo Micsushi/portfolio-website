@@ -42,7 +42,7 @@
       transition: all 0.4s ease;
       
       svg {
-        color: #fff !important;
+        color: #fff;
         filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
       }
     }
@@ -51,7 +51,7 @@
       font-family: 'Orbitron', sans-serif;
       font-weight: 900;
       font-size: 1rem;
-      color: #fff !important;
+      color: #fff;
       text-shadow:  0 0 2px #fff;      
       background: none;
       display: inline-block;
@@ -60,11 +60,12 @@
   }
 }
 
+
 // Text styling
 .vertical-timeline {
   &-element {
     &-title {
-      color: #fff !important;
+      color: #fff;
       font-weight: 700;
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
@@ -73,14 +74,14 @@
     }
 
     &-subtitle {
-      color: #f2cc8f !important;
+      color: #f2cc8f;
       margin: 0.5rem 0;
       font-weight: 600;
       font-family: 'Lato', sans-serif;
     }
 
     p {
-      color: #e6dfdf !important;
+      color: #e6dfdf;
       line-height: 1.6;
       
       b {

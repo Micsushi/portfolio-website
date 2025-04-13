@@ -118,18 +118,56 @@ function Navigation({ parentToChild, modeChange }: any) {
   };
 
   const drawer = (
-    <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <p className="mobile-menu-top"><ListIcon />Menu</p>
-      <Divider />
+    <Box 
+      className="navigation-bar-responsive" 
+      onClick={handleDrawerToggle} 
+      sx={{ 
+        textAlign: 'center',
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)'
+      }}
+    >
+      <p className="mobile-menu-top">
+        <ListIcon sx={{ 
+          fontSize: '2rem',
+          filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.7))'
+        }} /> 
+        Menu
+      </p>
+      <Divider sx={{ 
+        bgcolor: 'rgba(130, 88, 240, 0.5)',
+        boxShadow: '0 0 3px #ffffffb3, 0 0 5px #544eef',
+        height: '2px'
+      }} />
       <List>
         {navItems.map((item) => (
           <ListItem key={item[0]} disablePadding>
             <ListItemButton
-              sx={{ textAlign: 'center' }}
+              sx={{ 
+                justifyContent: 'center',
+                py: 2,
+                position: 'relative',
+                '&:hover': {
+                  bgcolor: 'rgba(130, 88, 240, 0.1)'
+                }
+              }}
               onClick={() => scrollToSection(item[1])}
               className={activeSection === item[1] ? 'active' : ''}
             >
-              <ListItemText className="nav-list-item" primary={item[0]} />
+              <ListItemText 
+                primary={item[0]} 
+                primaryTypographyProps={{
+                  sx: {
+                    fontSize: '1.2rem',
+                    fontWeight: 600,
+                    letterSpacing: '1px',
+                    textShadow: '0 0 1px #fff, 0 0 2px #544eef',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      textShadow: '0 0 3px #fff, 0 0 5px #544eef'
+                    }
+                  }
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
