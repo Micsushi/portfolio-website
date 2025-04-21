@@ -201,6 +201,15 @@
   }
 }
 
+@media (max-width: 850px) {
+  .navigation-bar .nav-list-item, 
+  .navigation-bar .MuiButton-root {
+    font-weight: 900;
+    font-size: 0.5rem; 
+    margin: 0px; 
+  }
+}
+
 @media (max-width: 730px) {
   .navigation-bar {
     .MuiButton-root {
