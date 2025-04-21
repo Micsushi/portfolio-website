@@ -65,7 +65,7 @@ html {
 }
 
 @mixin float(
-  $animation-duration: 4s
+  $animation-duration: 6s
 ){
   animation: float $animation-duration ease-in-out infinite;
 }
