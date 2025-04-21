@@ -14,7 +14,7 @@ function Timeline() {
         <h1 className="header" ref={h1Ref}>Career History</h1>
         <VerticalTimeline>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+            dateClassName="my-custom-date-class"
             date="May 2024 - Current"
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
@@ -27,7 +27,7 @@ function Timeline() {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+            dateClassName="my-custom-date-class"
             date="Aug 2023 - May 2024"
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
@@ -40,7 +40,7 @@ function Timeline() {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+            dateClassName="my-custom-date-class"
             date="May 2022 - Feb 2023"
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
@@ -53,7 +53,7 @@ function Timeline() {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+            dateClassName="my-custom-date-class"
             date="Mar 2021 - May 2022"
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
@@ -65,7 +65,7 @@ function Timeline() {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+            dateClassName="my-custom-date-class"
             date="JUN 2019 - Current"
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
@@ -78,7 +78,7 @@ function Timeline() {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+            dateClassName="my-custom-date-class"
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Other</h3>

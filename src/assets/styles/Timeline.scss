@@ -1,6 +1,14 @@
 // Timeline.scss
 @import '../../index';
 
+.my-custom-date-class {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  .light-mode & {
+    color: black!important;
+  }
+}
+
 .vertical-timeline {
   &::before {
     background: linear-gradient(to bottom, 
