@@ -201,7 +201,7 @@
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
   .navigation-bar .nav-list-item, 
   .navigation-bar .MuiButton-root {
     font-weight: 900;
@@ -210,16 +210,12 @@
   }
 }
 
-@media (max-width: 730px) {
-  .navigation-bar {
-    .MuiButton-root {
-      margin: 0 5px;
-      padding: 0 5px;
-      font-size: 0.7rem;
-    }
-  }
-  .MuiSvgIcon-root {
-    font-size: 1.5rem !important;
+@media (max-width: 700px) {
+  .navigation-bar .nav-list-item, 
+  .navigation-bar .MuiButton-root {
+    font-weight: 900;
+    font-size: 0.4rem; 
+    margin: 0px; 
   }
 }
 .navbar-fixed-top {
