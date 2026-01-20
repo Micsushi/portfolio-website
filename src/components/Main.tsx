@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import DownloadIcon from '@mui/icons-material/Download';
 import 'animate.css';
 import selfie from "../assets/images/selfie.jpg";
 import '../assets/styles/Main.scss';
@@ -16,10 +17,12 @@ function Main() {
 
     const gitElement = document.querySelector('.git-icon');
     const linkElement = document.querySelector('.linkedin-icon');
+    const resumeElement = document.querySelector('.resume-icon');
     
     setTimeout(() => {
       gitElement?.classList.add('animate__animated', 'animate__flash');
       linkElement?.classList.add('animate__animated', 'animate__flash');
+      resumeElement?.classList.add('animate__animated', 'animate__flash');
     }, 2000);
 
     const handleVideoPlay = () => {
@@ -78,6 +81,10 @@ function Main() {
             <div className="social_icons">
               <a className="git-icon" href="https://github.com/micsushi" target="_blank" rel="noreferrer"><GitHubIcon/></a>
               <a className="linkedin-icon" href="https://www.linkedin.com/in/wjshi/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+              <a className="resume-icon" href="/Michael_Shi_Resume.pdf" download="Michael_Shi_Resume.pdf">
+                <DownloadIcon/>
+                <span>Resume</span>
+              </a>
             </div>
           </div>
         </div>

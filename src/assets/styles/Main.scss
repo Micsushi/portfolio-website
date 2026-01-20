@@ -133,12 +133,106 @@
     display: flex;
     flex-direction: row;
     gap: clamp(10px, 2vw, 20px);
-    color: white;
+    color: #f2cc8f;
     padding-left: clamp(2px, 1vw, 5px);
 
     svg {
       font-size: clamp(2rem, 5vw, 5rem);
       filter: drop-shadow(0 0 5px rgba(242, 204, 143, 0.7));
+      transition: all 0.3s ease;
+    }
+
+    a {
+      text-decoration: none;
+      color: #f2cc8f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .git-icon {
+      color: #f2cc8f;
+      
+      svg {
+        color: #f2cc8f;
+        filter: drop-shadow(0 0 5px rgba(242, 204, 143, 0.7));
+      }
+
+      &:hover {
+        color: #544eef;
+        
+        svg {
+          color: #544eef;
+          filter: drop-shadow(0 0 10px rgba(84, 78, 239, 1));
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .linkedin-icon {
+      color: #f2cc8f;
+      
+      svg {
+        color: #f2cc8f;
+        font-size: clamp(2.2rem, 5.5vw, 5.5rem);
+        filter: drop-shadow(0 0 5px rgba(242, 204, 143, 0.7));
+      }
+
+      &:hover {
+        color: #544eef;
+        
+        svg {
+          color: #544eef;
+          filter: drop-shadow(0 0 10px rgba(84, 78, 239, 1));
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .resume-icon {
+      margin-left: 10px;
+      color: #f2cc8f;
+      border: 2px solid #f2cc8f;
+      border-radius: 8px;
+      padding: 0px 12px;
+      box-shadow: 0 0 5px rgba(242, 204, 143, 0.7);
+      transition: all 0.3s ease;
+      background-color: transparent;
+      
+      svg {
+        color: #f2cc8f;
+        font-size: clamp(1.5rem, 4vw, 3.5rem);
+        filter: drop-shadow(0 0 5px rgba(242, 204, 143, 0.7));
+        transition: all 0.3s ease;
+      }
+
+      span {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 600;
+        color: #f2cc8f;
+        text-shadow: 0 0 5px rgba(230, 223, 223, 0.5);
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        color: #544eef;
+        border-color: #544eef;
+        box-shadow: 0 0 10px rgba(84, 78, 239, 1);
+        
+        svg {
+          color: #544eef;
+          filter: drop-shadow(0 0 10px rgba(84, 78, 239, 1));
+          transform: scale(1.1);
+        }
+
+        span {
+          color: #544eef;
+          text-shadow: 0 0 10px rgba(84, 78, 239, 0.8);
+        }
+      }
     }
   }
 
@@ -206,6 +300,22 @@
       
       svg {
         font-size: clamp(1.8rem, 6vw, 3rem);
+      }
+
+      .linkedin-icon svg {
+        font-size: clamp(2rem, 6.5vw, 3.3rem);
+      }
+
+      .resume-icon {
+        padding: 6px 12px;
+        
+        svg {
+          font-size: clamp(1.2rem, 3vw, 2.5rem);
+        }
+        
+        span {
+          font-size: clamp(1rem, 2.5vw, 1.5rem);
+        }
       }
     }
 
