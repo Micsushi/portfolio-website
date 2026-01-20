@@ -3,7 +3,6 @@ import '../assets/styles/About.scss';
 import useAnimation from './useAnimation';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { useMediaQuery, useTheme } from '@mui/material';
 import nathacks from '../assets/images/Nathacks 2024.jpg';
 import allstar from '../assets/images/all stars grp.jpg';
 import campus from '../assets/images/campus cup 2024.jpg';
@@ -22,8 +21,6 @@ const sliderImages = [
 
 function About() {
   const h1Ref = useAnimation<HTMLHeadingElement>();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const textContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

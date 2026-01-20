@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, memo } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
