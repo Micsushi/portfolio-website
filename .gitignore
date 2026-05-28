@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local agent instructions
+AGENTS.md
+
+# Local agent instructions and tooling
+CLAUDE.md
+.claude/
+.opencode/
+.codex/
+.agents/
+docs/agents/
