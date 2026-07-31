@@ -38,7 +38,6 @@ function Navigation({ parentToChild, modeChange }: any) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // Function to play sound
   const playSound = () => {
     if (soundEnabled) {
       const clickSound = new Audio(process.env.PUBLIC_URL + '/woosh.wav');
@@ -49,7 +48,6 @@ function Navigation({ parentToChild, modeChange }: any) {
     }
   };
 
-  // Toggle sound on/off
   const toggleSound = () => {
     if (!soundEnabled) {
       themeSoundRef.current = new Audio(process.env.PUBLIC_URL + '/theme.mp3');
@@ -70,7 +68,6 @@ function Navigation({ parentToChild, modeChange }: any) {
     setToastVisible(true); 
   };
 
-  // Hide the Toast after 2 seconds
   useEffect(() => {
     if (toastVisible) {
       const timer = setTimeout(() => {
@@ -183,7 +180,6 @@ function Navigation({ parentToChild, modeChange }: any) {
           display: 'flex',
           justifyContent: { xs: 'space-between', sm: 'flex-start' }
         }}>
-          {/* Mobile menu button - left aligned */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -191,13 +187,12 @@ function Navigation({ parentToChild, modeChange }: any) {
             onClick={handleDrawerToggle}
             sx={{ 
               display: { sm: 'none' },
-              mr: 'auto' // Pushes everything else right
+              mr: 'auto'
             }}
           >
             <MenuIcon />
           </IconButton>
 
-          {/* Theme toggle - centered in mobile */}
           <Box 
             className="theme-toggle-container"
             sx={{
@@ -215,7 +210,6 @@ function Navigation({ parentToChild, modeChange }: any) {
             )}
           </Box>
 
-          {/* Navigation items - hidden on mobile */}
           <Box sx={{ 
             flexGrow: 1,
             display: { xs: 'none', sm: 'flex' },
@@ -234,10 +228,9 @@ function Navigation({ parentToChild, modeChange }: any) {
             ))}
           </Box>
 
-          {/* Sound toggle - right aligned */}
           <Box sx={{ 
             ml: { sm: 2 },
-            marginLeft: 'auto' // Keeps it right-aligned
+            marginLeft: 'auto'
           }}>
             <IconButton
               color="inherit"

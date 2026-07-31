@@ -27,7 +27,6 @@ function About() {
     if (textContentRef.current) {
       const paragraphs = textContentRef.current.querySelectorAll('p');
       
-      // Wrap each word in a span
       paragraphs.forEach((paragraph) => {
         const words = paragraph.textContent?.split(' ') || [];
         paragraph.innerHTML = words.map(word => 
@@ -67,17 +66,15 @@ function About() {
           <p>Hi! I'm <b>Michael</b> from South Africa!</p>
           <p>
             I am currently studying Computer Science at the <b>University of Alberta</b>. I'm also a Software Engineer Intern at <b> INVIDI Technologies</b>.
-            Outside of work and school, I'm always on the move — whether that's on the dodgeball
-            court, the soccer field, or in the kitchen experimenting with dishes from around the world.
+            Outside of work and school, you'll usually find me playing dodgeball or soccer, or trying
+            a new recipe.
           </p>
           <p>
-            I thrive on trying new things and meeting new people. This explains why I've worked across multiple
-            industries. Everything from bartending to hardware repairs to business management. Every experience has
-            shaped how I approach problems and collaborate with others.
+            I've worked in bartending, hardware repair, and business management. Each job taught me
+            a different way to solve problems and work with people.
           </p>
           <p>
-            Above all, I'm a lifelong learner and builder who loves connecting with others and
-            bringing value wherever I can.
+            I like learning by building and meeting people who care about their work.
           </p>
         </div>
 

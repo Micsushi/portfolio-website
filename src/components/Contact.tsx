@@ -46,7 +46,7 @@ function Contact() {
       <h1 ref={h1Ref} className="header">Contact Me</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
         <p className="contact-description">
-          Got a project waiting to be realized? Let's collaborate and make it happen!
+          Have a project in mind? Send me a message.
         </p>
         <div className="form-flex">
           <Controller

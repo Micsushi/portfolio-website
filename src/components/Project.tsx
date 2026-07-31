@@ -16,8 +16,8 @@ function Project() {
             <h2>StudyAmp - Nathacks 1st Place</h2>
             <img src={studyAmp} className="project-image zoom" alt="StudyAmp" />
           </a>
-          <p>An <b>EEG brainwave</b> tracking and analysis tool that monitors your attention score through
-            a Muse headband. Provides feedback and summaries on your state of mind in a given period.
+          <p>An <b>EEG brainwave</b> tracking and analysis tool that uses a Muse headband to monitor
+            attention and summarize changes over time.
           </p>
           <p><b>Tech stack:</b> Python, BrainFlow, Flask, Next.js, Docker</p>
         </div>
@@ -26,8 +26,7 @@ function Project() {
             <h2>Numerify</h2>
             <img src={numerify} className="project-image zoom" alt="Numerify" />
           </a>
-          <p>Formerly known as Banana Math, this is a mental math training site with a focus on gamifying math
-            questions and get people to use their brains more.</p>
+          <p>Formerly known as Banana Math, Numerify turns mental math practice into a game.</p>
           <p><b>Tech stack:</b> PostgresSQL, Supabase, CI/CD pipelines, Kubernetes, GCP, Coolify</p>
         </div>
         <div className="project">
@@ -35,7 +34,7 @@ function Project() {
             <h2>MediCheck - HackED 3rd Place</h2>
             <img src={mediCheck} className="project-image zoom" alt="MediCheck" />
           </a>
-          <p> A platform powered by a <b>Retrieval-Augmented Generation</b> pipeline to automate all the administrative tasks for hospitals.</p>
+          <p>A platform that uses a <b>retrieval-augmented generation</b> pipeline to automate hospital administrative tasks.</p>
           <p><b>Tech stack:</b> AstraDB, Whisper, DeepSeek, Llama 3.2, TypeScript, React, Tailwind</p>
         </div>
         <div className="project">
@@ -43,7 +42,7 @@ function Project() {
             <h2>Study Buddy</h2>
             <img src={studyBuddy} className="project-image zoom" alt="Study Buddy" />
           </a>
-          <p>Feature-packed browser extension that improves study efficiency with a focus mode, page summaries and 1-click search.
+          <p>A browser extension with focus mode, page summaries, and one-click search.
           </p>
           <p><b>Tech stack:</b> Express.js, Node.js, React, Javascript, Python, OpenAI</p>
         </div>

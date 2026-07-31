@@ -22,8 +22,8 @@ function Timeline() {
             <h5 className="vertical-timeline-element-subtitle">INVIDI Technologies</h5>
             <h5 className="vertical-timeline-element-subtitle">Edmonton, AB</h5>
             <p>
-              Polished my skills as a <b>Full Stack</b> and <b>Devops</b> intern for 16 months, worked with <b>AWS, Terraform, Kubernetes, Kotlin,
-               Vue.js, Postgres, Snyk, Datadog, Artifactory</b> and many more industry-standard tools
+              Worked as a <b>full-stack</b> and <b>DevOps</b> intern using <b>AWS, Terraform, Kubernetes,
+              Kotlin, Vue.js, Postgres, Snyk, Datadog, and Artifactory</b>.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -35,8 +35,8 @@ function Timeline() {
             <h5 className="vertical-timeline-element-subtitle">University of Alberta</h5>
             <h5 className="vertical-timeline-element-subtitle">Edmonton, AB</h5>
             <p>
-              I was one of the Lead TAs for CMPUT 201-Practical Programming Methodology. I gave lab lectures to students on topics of 
-              <b> Bash</b>, <b>C</b>, working with VMs and implemations of Data structures and Algorithms
+              Served as a lead TA for CMPUT 201, Practical Programming Methodology. Led labs on
+              <b> Bash</b>, <b>C</b>, virtual machines, data structures, and algorithms.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -48,8 +48,8 @@ function Timeline() {
             <h5 className="vertical-timeline-element-subtitle">Bestbuy</h5>
             <h5 className="vertical-timeline-element-subtitle">Edmonton, AB</h5>
             <p>
-              Learnt hands on skills with devices by performing <b>hardware repairs</b>, <b>software debugging</b>, <b>system troubleshooting</b>.
-              Worked on <b>communication</b> and <b>sales</b> skills by servicing thousands of customers 
+              Performed <b>hardware repairs</b>, <b>software debugging</b>, and <b>system troubleshooting</b>
+              while helping customers in person.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -61,7 +61,8 @@ function Timeline() {
             <h5 className="vertical-timeline-element-subtitle">NEE YOU Trading</h5>
             <h5 className="vertical-timeline-element-subtitle">Johannesburg, South Africa</h5>
             <p>
-            Worked on <b>Statistical Analysis, Automation, Data Governance, Data pipelines</b> using <b>R, Python, MongoDB, Java</b> and other tools
+              Worked on <b>statistical analysis, automation, data governance, and data pipelines</b>
+              using <b>R, Python, MongoDB, and Java</b>.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -73,8 +74,7 @@ function Timeline() {
             <h5 className="vertical-timeline-element-subtitle">Self-Employed</h5>
             <h5 className="vertical-timeline-element-subtitle">Remote</h5>
             <p>
-              I worked as a private tutor for the over <b>5 years</b> now! I am very proud to say that I have taught over <b>100</b> students ranging from grade 3 all the way
-              up to second year university students
+              I've tutored more than <b>100 students</b>, from grade 3 through second-year university.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -82,10 +82,10 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Other</h3>
-            <h5 className="vertical-timeline-element-subtitle">Check out my <a href="https://www.linkedin.com/in/wjshi/">Linkedin</a> for details</h5>
+            <h5 className="vertical-timeline-element-subtitle">See my <a href="https://www.linkedin.com/in/wjshi/">LinkedIn</a> for details</h5>
             <p>
-              I held multiple student leader and part time positions these past few years, including but not limited to: <b>Residence Floor Coordinator,
-               Vice President of Schaffer Residence, VP External for UACS</b> and <b>VP Admin for UACS</b>
+              Student leadership roles include <b>Residence Floor Coordinator, Vice President of
+              Schaffer Residence, UACS VP External,</b> and <b>UACS VP Admin</b>.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>

@@ -45,9 +45,7 @@ function Expertise() {
                         <FontAwesomeIcon icon={faReact} size="3x"/>
                         <h3>Languages & Frameworks</h3>
                         <p>
-                            I am experienced in both frontend and backend development, with proficiency
-                            in a variety of programming languages and frameworks, enabling me to build
-                            modern, scalable, and high-performance applications across diverse platforms.
+                            I build frontend and backend applications with the languages and frameworks below.
                         </p>
                         <div className="flex-chips">
                             {labelsFirst.map((label, index) => (
@@ -60,9 +58,8 @@ function Expertise() {
                         <FontAwesomeIcon icon={faDocker} size="3x"/>
                         <h3>Cloud & DevOps</h3>
                         <p>
-                            I have hands-on experience with maintaining infrastructure for large-scale cloud systems.
-                            My DevOps expertise includes containerization, orchestration, infrastructure-as-code,
-                            CI/CD pipelines, and deployment automation.
+                            I've maintained infrastructure for large cloud systems, including containers,
+                            orchestration, infrastructure as code, CI/CD pipelines, and deployment automation.
                         </p>
                         <div className="flex-chips">
                             {labelsSecond.map((label, index) => (
@@ -75,8 +72,8 @@ function Expertise() {
                         <FontAwesomeIcon icon={faMdb} size="3x"/>
                         <h3>Databases & Tools</h3>
                         <p>
-                            I am skilled in working with both SQL and NoSQL databases, optimizing schemas for efficient data storage.
-                            I have implemented secure RESTful APIs with auth and have experience in vulnerability management and data monitoring.
+                            I work with SQL and NoSQL databases, REST APIs, authentication, vulnerability
+                            management, and monitoring.
                         </p>
                         <div className="flex-chips">
                             {labelsThird.map((label, index) => (

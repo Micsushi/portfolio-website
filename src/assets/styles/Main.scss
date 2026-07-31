@@ -1,4 +1,3 @@
-// Main.scss
 @import '../../index';
 
 .container {
@@ -20,7 +19,7 @@
 
 .about-section {
   width: 100%;
-  height: auto; // Changed from 100%
+  height: auto;
   min-height: 100dvh;
   display: flex;
   gap: clamp(30px, 5vw, 60px);
@@ -29,7 +28,6 @@
   padding: 20px clamp(5%, 8vw, 15%);
   position: relative;
   box-sizing: border-box;
-  // Remove overflow: hidden
   background-color: #171729;
 }
 
