@@ -1,4 +1,4 @@
-@import '../../index'; 
+@import '../../index';
 
 .contact-container {
   padding: 6% 10% 8% 10%;
@@ -86,7 +86,7 @@
 
   .MuiOutlinedInput-notchedOutline {
     border: var(--primary-border);
-    box-shadow: 
+    box-shadow:
       0 0 5px #544eef,
       0 0 10px #521fdc;
 
@@ -98,7 +98,7 @@
 
   .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
     border-color: #ffffffad;
-    box-shadow: 
+    box-shadow:
         0 0 5px #fff,
         0 0 10px #544eef;
 
@@ -148,12 +148,21 @@
   .light-mode & {
     background-color: #6c5ce7;
     box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
-    
+
     &:hover {
       background-color: #5a4bd1;
       box-shadow: 0 0 15px rgba(108, 92, 231, 0.5);
     }
   }
+}
+
+.contact-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
