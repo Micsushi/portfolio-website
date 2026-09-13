@@ -76,7 +76,7 @@ function Contact() {
             name="name"
             control={control}
             defaultValue=""
-            rules={{ required: 'Name is required', maxLength: { value: 120, message: 'Name is too long' } }}
+            rules={{ validate: value => !!value.trim() || 'Name is required', maxLength: { value: 120, message: 'Name is too long' } }}
             render={({ field, fieldState: { error } }) => (
               <TextField
                 {...field}
@@ -120,7 +120,7 @@ function Contact() {
             name="message"
             control={control}
             defaultValue=""
-            rules={{ required: 'A message is required', maxLength: { value: 2000, message: 'Message is too long' } }}
+            rules={{ validate: value => !!value.trim() || 'A message is required', maxLength: { value: 2000, message: 'Message is too long' } }}
             render={({ field, fieldState: { error } }) => (
               <TextField
                 {...field}

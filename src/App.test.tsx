@@ -8,6 +8,17 @@ jest.mock('./components/useAnimation', () => ({ __esModule: true, default: () =>
 
 beforeEach(() => jest.clearAllMocks());
 
+test('whitespace-only name and message do not send empty content', async () => {
+  render(<Contact />);
+  fireEvent.change(screen.getByLabelText('Your Name'), { target: { value: '   ' } });
+  fireEvent.change(screen.getByLabelText('Your Email address'), { target: { value: 'example@example.com' } });
+  fireEvent.change(screen.getByLabelText('Your Message'), { target: { value: '\n   \t' } });
+  fireEvent.click(screen.getByRole('button', { name: 'SEND' }));
+  expect(await screen.findByText('Name is required')).toBeInTheDocument();
+  expect(screen.getByText('A message is required')).toBeInTheDocument();
+  expect(emailjs.send).not.toHaveBeenCalled();
+});
+
 test('empty contact fields do not send a message', async () => {
   render(<Contact />);
   fireEvent.click(screen.getByRole('button', { name: 'SEND' }));
