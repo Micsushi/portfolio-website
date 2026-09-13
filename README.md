@@ -26,3 +26,7 @@ EmailJS client. The production bundle is written to `build/`. For UI changes,
 also check narrow and wide layouts, navigation, keyboard focus, and form error
 messages in a dedicated local browser profile. A local build does not establish
 email delivery or a deployed preview's source identity.
+
+After a change, compare the running instance's served assets with the intended
+build or deployment revision. Report the source and running revision separately;
+if they differ, state whether a rebuild, restart, or reload is still needed.
