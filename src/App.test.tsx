@@ -8,6 +8,26 @@ jest.mock('./components/useAnimation', () => ({ __esModule: true, default: () =>
 
 beforeEach(() => jest.clearAllMocks());
 
+test('failed delivery keeps the draft and permits a later retry', async () => {
+  const clock = jest.spyOn(Date, 'now').mockReturnValue(100_000);
+  const errorLog = jest.spyOn(console, 'error').mockImplementation(() => {});
+  try {
+    (emailjs.send as jest.Mock).mockRejectedValueOnce(new Error('Synthetic unavailable transport')).mockResolvedValueOnce({status: 200});
+    render(<Contact />);
+    fireEvent.change(screen.getByLabelText('Your Name'), { target: { value: 'Example Person' } });
+    fireEvent.change(screen.getByLabelText('Your Email address'), { target: { value: 'example@example.com' } });
+    fireEvent.change(screen.getByLabelText('Your Message'), { target: { value: 'Retain this synthetic draft' } });
+    fireEvent.click(screen.getByRole('button', { name: 'SEND' }));
+    expect(await screen.findByText('Failed to send your message. Please try again.')).toBeInTheDocument();
+    expect(screen.getByLabelText('Your Message')).toHaveValue('Retain this synthetic draft');
+    clock.mockReturnValue(130_001);
+    fireEvent.click(screen.getByRole('button', { name: 'SEND' }));
+    expect(await screen.findByText('Your message has been sent successfully!')).toBeInTheDocument();
+    expect(emailjs.send).toHaveBeenCalledTimes(2);
+    await waitFor(() => expect(screen.getByLabelText('Your Message')).toHaveValue(''));
+  } finally { clock.mockRestore(); errorLog.mockRestore(); }
+});
+
 test('whitespace-only name and message do not send empty content', async () => {
   render(<Contact />);
   fireEvent.change(screen.getByLabelText('Your Name'), { target: { value: '   ' } });
